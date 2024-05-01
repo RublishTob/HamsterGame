@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpriteElementUI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 01dfc1e9ce428ac4ab4efea2725b34f6, type: 3}
+    - {fileID: 2800000, guid: dff53d730a07fb2419310367f4660f29, type: 3}
+    - {fileID: 2800000, guid: ac937a59f528dd2409b172959ce12354, type: 3}
+    - {fileID: 2800000, guid: 8e0fa0e31044cd34cad3d968841944c4, type: 3}
+    - {fileID: 2800000, guid: 0b296afdfe9a2154ab430197be3c5441, type: 3}
+    - {fileID: 2800000, guid: d9ab6d6b9547fcd4eaa8daed9c299763, type: 3}
+    - {fileID: 2800000, guid: 7cd6daac041b3904b9ce59805a450702, type: 3}
+    - {fileID: 2800000, guid: da2071e2b7083ae4798f561b4847ecb6, type: 3}
+    - {fileID: 2800000, guid: 2a67b9eaac4ff3f41a2f1874e9e09a6a, type: 3}
+    - {fileID: 2800000, guid: 38be504c45dc36a42a8ae007b5e7a213, type: 3}
+    - {fileID: 2800000, guid: 379066d1869d6614592a49aa18199a36, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 379066d1869d6614592a49aa18199a36, type: 3}
+  - {fileID: 21300000, guid: da2071e2b7083ae4798f561b4847ecb6, type: 3}
+  - {fileID: 21300000, guid: dff53d730a07fb2419310367f4660f29, type: 3}
+  - {fileID: 21300000, guid: 8e0fa0e31044cd34cad3d968841944c4, type: 3}
+  - {fileID: 21300000, guid: ac937a59f528dd2409b172959ce12354, type: 3}
+  - {fileID: 21300000, guid: 01dfc1e9ce428ac4ab4efea2725b34f6, type: 3}
+  - {fileID: 21300000, guid: 2a67b9eaac4ff3f41a2f1874e9e09a6a, type: 3}
+  - {fileID: 21300000, guid: d9ab6d6b9547fcd4eaa8daed9c299763, type: 3}
+  - {fileID: 21300000, guid: 38be504c45dc36a42a8ae007b5e7a213, type: 3}
+  - {fileID: 21300000, guid: 7cd6daac041b3904b9ce59805a450702, type: 3}
+  - {fileID: 21300000, guid: 0b296afdfe9a2154ab430197be3c5441, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "\u043F\u0430\u0442\u0442\u0435\u0440\u043D1"
+  - "\u041A\u043D\u043E\u043F\u043A\u0430 1"
+  - HighLightBackground
+  - StandartBackground
+  - LockImage
+  - "ContentImage \u2014 HighLight"
+  - "\u041B\u0435\u043D\u0442\u043E\u0447\u043A\u0430"
+  - "\u0417\u0430\u043C\u043E\u043A 2"
+  - "\u041C\u043E\u043D\u0435\u0442\u0430"
+  - "\u041A\u0430\u043C\u0435\u043D\u043D\u0430\u044F \u043F\u043B\u0438\u0442\u0430"
+  - Wallet
+  m_RenderDataMap: {}
+  m_Tag: SpriteElementUI
+  m_IsVariant: 0

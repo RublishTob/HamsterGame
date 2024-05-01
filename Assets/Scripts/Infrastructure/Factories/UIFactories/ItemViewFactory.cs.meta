@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 54872a6d6ec4140438e4a13933c3d24a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _characterItemViewPrefab: {fileID: 5710107298759175142, guid: dea44d4038d333748b093412d31c0c15, type: 3}
+  - _houseItemViewPrefab: {fileID: 7490892914610574829, guid: 928cd175ab48a974db0aea82e8b903f3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
