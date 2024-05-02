@@ -21,6 +21,19 @@ public class UIFactory
         _assetProvider = assetProvider;
         _container = container;
     }
+    public GameObject CreateButton()
+    {
+        var prefab = _assetProvider.LoadAsset(BackMenu);
+        var backToMenu = (GameObject)Object.Instantiate(prefab, _panels.transform.parent);
+        return _backToMenu = backToMenu;
+    }
+    public GameObject CreatePanel()
+    {
+        var prefab = _assetProvider.LoadAsset(BackMenu);
+        var backToMenu = (GameObject)Object.Instantiate(prefab, _panels.transform.parent);
+        return _backToMenu = backToMenu;
+    }
+
     public GameObject CreateButtonBackMenu()
     {
         var prefab = _assetProvider.LoadAsset(BackMenu);
@@ -49,7 +62,6 @@ public class UIFactory
     {
         var prefab = _assetProvider.LoadAsset(Navigate);
         var navbar = (GameObject) Object.Instantiate(prefab, transform, Quaternion.identity);
-        //_menu.GetComponent<MenuView>()._gameButton._button.onClick.AddListener(() => { navbar.GetComponent<Navigation>().OpenGamePanel(); }); 
         return navbar;
     }
 }
