@@ -8,12 +8,14 @@ public class Menu : GameState
     private Logger _logger;
     private SceneLoader _sceneLoader;
     private UIFactory _uiFactory;
-    public Menu(GameStateMachine stateMachine, DataLocalProvider provider, Logger logger, SceneLoader sceneLoader, UIFactory uiFactory) : base(stateMachine)
+    private UIControllerFactory _controllerFactory;
+    public Menu(GameStateMachine stateMachine, DataLocalProvider provider, Logger logger, SceneLoader sceneLoader, UIFactory uiFactory, UIControllerFactory controllerFactory) : base(stateMachine)
     {
         _sceneLoader = sceneLoader;
         _dataProvider = provider;
         _logger = logger;
         _uiFactory = uiFactory;
+        _controllerFactory = controllerFactory;
     }
     public override void Start()
     {

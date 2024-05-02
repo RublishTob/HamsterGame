@@ -9,6 +9,7 @@ public class UIFactory
     private const string Menu = "Prefabs/Menu";
     private const string Navigate = "Prefabs/NavigationMenu";
     private const string BackMenu = "Prefabs/BackToMenu";
+
     private IAssetProvider _assetProvider;
     private DiContainer _container;
 
