@@ -1,14 +1,22 @@
 using UnityEngine;
+using Zenject;
 
 public class UIRouter : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private UIFactory _viewFactory;
+    private UIControllerFactory _controllerFactory;
+
+    [Inject]
+    public void Construct(UIFactory viewFactory, UIControllerFactory controllerFactory)
+    {
+        _controllerFactory = controllerFactory;
+        _viewFactory = viewFactory;
+    }
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         
