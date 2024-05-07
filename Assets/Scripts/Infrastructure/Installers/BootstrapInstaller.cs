@@ -16,9 +16,9 @@ public class BootstrapInstaller : MonoInstaller
         Container.Bind<SoundSystem>().FromInstance(_soundSystem).AsSingle();
         Container.BindInterfacesAndSelfTo<AssetProvider>().AsSingle();
         Container.Bind<UIRouter>().AsSingle();
-        Container.BindInterfacesAndSelfTo<LocalizationManager>().AsSingle();
+        Container.BindInterfacesAndSelfTo<Localization>().AsSingle();
 
-        Container.Bind<UIControllerFactory>().AsSingle();
+        Container.Bind<UIPresenterFactory>().AsSingle();
         Container.Bind<UIFactory>().AsSingle();
 
         Container.Bind<InitializeGame>().FromNew().AsSingle();

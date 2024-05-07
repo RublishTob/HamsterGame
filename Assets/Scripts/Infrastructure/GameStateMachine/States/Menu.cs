@@ -1,15 +1,12 @@
 
-using System.Threading.Tasks;
-using UnityEngine;
-
 public class Menu : GameState
 {
     private IDataProvider _dataProvider;
     private Logger _logger;
     private SceneLoader _sceneLoader;
     private UIFactory _uiFactory;
-    private UIControllerFactory _controllerFactory;
-    public Menu(GameStateMachine stateMachine, DataLocalProvider provider, Logger logger, SceneLoader sceneLoader, UIFactory uiFactory, UIControllerFactory controllerFactory) : base(stateMachine)
+    private UIPresenterFactory _controllerFactory;
+    public Menu(GameStateMachine stateMachine, DataLocalProvider provider, Logger logger, SceneLoader sceneLoader, UIFactory uiFactory, UIPresenterFactory controllerFactory) : base(stateMachine)
     {
         _sceneLoader = sceneLoader;
         _dataProvider = provider;
@@ -24,10 +21,10 @@ public class Menu : GameState
 
     private void OnLoad()
     {
-        _uiFactory.CreateMenu(new Vector3(1, 1, 1));
-        _uiFactory.CreateMenuPanels(new Vector3(2, 2, 1));
-        _uiFactory.CreateButtonBackMenu();
-        _uiFactory.CreateNavigationMenu(new Vector3(1, 3, 1));
+        //_uiFactory.CreateMenu(new Vector3(1, 1, 1));
+        //_uiFactory.CreateMenuPanels(new Vector3(2, 2, 1));
+        //_uiFactory.CreateButtonBackMenu();
+        //_uiFactory.CreateNavigationMenu(new Vector3(1, 3, 1));
     }
 
     public override void Update()
