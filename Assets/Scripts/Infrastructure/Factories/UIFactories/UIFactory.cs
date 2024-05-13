@@ -1,68 +1,79 @@
-using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
 public class UIFactory
 {
-    private const string LoadBar = "Prefabs/Load";
+    private const string Root = "Prefabs/Root";
     private const string Panels = "Prefabs/Panels";
     private const string Menu = "Prefabs/Menu";
-    private const string Navigate = "Prefabs/NavigationMenu";
-    private const string BackMenu = "Prefabs/BackToMenu";
+    private const string Button = "Prefabs/Button";
+    private const string LoadPanel = "Prefabs/LoadPanel";
+    private const string GamePanel = "Prefabs/NewGamePanel";
+    private const string SettingsPanel = "Prefabs/SettingsPanel";
+    private const string Load = "Prefabs/Load";
 
     private IAssetProvider _assetProvider;
-    private DiContainer _container;
 
     private GameObject _panels;
     private GameObject _menu;
-    public GameObject _backToMenu { get; private set; }
+    private Canvas _root;
+    private DiContainer _container;
 
     public UIFactory (IAssetProvider assetProvider, DiContainer container)
     {
         _assetProvider = assetProvider;
         _container = container;
     }
-    public GameObject CreateButton()
+    public void CreateRoot(Vector3 transform)
     {
-        var prefab = _assetProvider.LoadAsset(BackMenu);
-        var backToMenu = (GameObject)Object.Instantiate(prefab, _panels.transform.parent);
-        return _backToMenu = backToMenu;
+        var prefab = _assetProvider.LoadAsset(Root);
+        _root = Object.Instantiate(prefab, transform, Quaternion.identity).GetComponent<Canvas>();
     }
-    public GameObject CreatePanel()
-    {
-        var prefab = _assetProvider.LoadAsset(BackMenu);
-        var backToMenu = (GameObject)Object.Instantiate(prefab, _panels.transform.parent);
-        return _backToMenu = backToMenu;
-    }
-
-    public GameObject CreateButtonBackMenu()
-    {
-        var prefab = _assetProvider.LoadAsset(BackMenu);
-        var backToMenu = (GameObject) Object.Instantiate(prefab, _panels.transform.parent);
-        return _backToMenu = backToMenu;
-    }
-    public GameObject CreateMenu(Vector3 transform)
+    public void CreateMenuRoot()
     {
         var prefab = _assetProvider.LoadAsset(Menu);
-        var menu = (GameObject) Object.Instantiate(prefab, transform, Quaternion.identity);
-        return _menu = menu;
+        _menu = (GameObject) Object.Instantiate(prefab, _root.transform);
+        _container.InjectGameObject(_menu);
+
     }
-    public GameObject CreateMenuPanels(Vector3 transform)
+    public void CreatePanelsRoot()
     {
         var prefab = _assetProvider.LoadAsset(Panels);
-        var panels = (GameObject) Object.Instantiate(prefab, transform, Quaternion.identity);
-        return _panels = panels;
+        _panels = (GameObject) Object.Instantiate(prefab, _root.transform);
+        _container.InjectGameObject(_panels);
     }
+    public GameObject CreateButton()
+    {
+        var prefab = _assetProvider.LoadAsset(Button);
+        var button = (GameObject)Object.Instantiate(prefab, _menu.transform);
+        return button;
+    }
+    public GameObject CreatePanel(TypePanel type)
+    {
+        Object prefab = new();
+
+        switch(type)
+        {
+            case TypePanel.NewGame:
+                prefab = _assetProvider.LoadAsset(GamePanel);
+                break;
+            case TypePanel.Settings:
+                prefab = _assetProvider.LoadAsset(SettingsPanel);
+                break;
+            case TypePanel.LoadGame:
+                prefab = _assetProvider.LoadAsset(LoadPanel);
+                break;
+        }
+
+        var panel = (GameObject)Object.Instantiate(prefab, _panels.transform);
+        return panel;
+    }
+
     public GameObject CreateLoadBar(Vector3 transform)
     {
-        var prefab = _assetProvider.LoadAsset(LoadBar);
-        var loadbar = (GameObject) Object.Instantiate(prefab, transform, Quaternion.identity);
+        var prefab = _assetProvider.LoadAsset(Load);
+        var loadbar = (GameObject)Object.Instantiate(prefab, transform, Quaternion.identity);
         return loadbar;
-    }
-    public GameObject CreateNavigationMenu(Vector3 transform)
-    {
-        var prefab = _assetProvider.LoadAsset(Navigate);
-        var navbar = (GameObject) Object.Instantiate(prefab, transform, Quaternion.identity);
-        return navbar;
     }
 }

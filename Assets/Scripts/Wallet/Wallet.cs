@@ -3,11 +3,11 @@ using System;
 public class Wallet
 {
     public event Action<int> CoinsChanged;
-    public PlayerData Data { get => _data; }
+    public PlayerSave Data { get => _data; }
 
-    private PlayerData _data;
+    private PlayerSave _data;
 
-    public Wallet(PlayerData data)
+    public Wallet(PlayerSave data)
     {
         _data = data;
     }

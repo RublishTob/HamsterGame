@@ -5,8 +5,10 @@ public class InitializeGame : GameState
     private IDataProvider _dataProvider;
     private Logger _logger;
     private InputPlayer _input;
-    public InitializeGame(GameStateMachine stateMachine, IPersistentData data, DataLocalProvider provider,Logger logger ,InputPlayer input) : base(stateMachine)
+    private Localization _localization;
+    public InitializeGame(GameStateMachine stateMachine, IPersistentData data, DataLocalProvider provider, Logger logger ,InputPlayer input, Localization localization) : base(stateMachine)
     {
+        _localization = localization;
         _persistentPlayerData = data;
         _dataProvider = provider;
         _logger = logger;
@@ -14,11 +16,10 @@ public class InitializeGame : GameState
     }
     public void LoadDataOrCreate()
     {
-        if (_dataProvider.TryLoad() == false)
-        {
-            _persistentPlayerData.PlayerData = new PlayerData();
-            _logger.Log("Can't find a Player_data, create new");
-        }
+        _dataProvider.TryLoadLocalization("Ru");
+        //_dataProvider.TryLoadLocalization("Eng");
+
+        _localization.ChangeLanguage("Ru");
     }
     public override void Start()
     {

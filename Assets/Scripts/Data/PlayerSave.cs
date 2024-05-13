@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System;
 using Newtonsoft.Json;
 
-public class PlayerData
+public class PlayerSave: IData
 {
     private CharacterSkins _selectedSkinCharacter;
     private HouseSkins _selectedHouse;
@@ -12,7 +12,7 @@ public class PlayerData
 
     private int _coins;
 
-    public PlayerData()
+    public PlayerSave()
     {
         _coins = 20000;
 
@@ -24,7 +24,7 @@ public class PlayerData
     }
 
     [JsonConstructor]
-    public PlayerData(int coins, CharacterSkins selectedSkinCharacter, HouseSkins selectedHouse, 
+    public PlayerSave(int coins, CharacterSkins selectedSkinCharacter, HouseSkins selectedHouse, 
         List<CharacterSkins> openCharacterSkins, List<HouseSkins> openHouseSkins)
     {
         _selectedSkinCharacter = selectedSkinCharacter;

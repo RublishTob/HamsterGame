@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public class Menu : GameState
 {
     private IDataProvider _dataProvider;
@@ -21,10 +23,9 @@ public class Menu : GameState
 
     private void OnLoad()
     {
-        //_uiFactory.CreateMenu(new Vector3(1, 1, 1));
-        //_uiFactory.CreateMenuPanels(new Vector3(2, 2, 1));
-        //_uiFactory.CreateButtonBackMenu();
-        //_uiFactory.CreateNavigationMenu(new Vector3(1, 3, 1));
+        _uiFactory.CreateRoot(new Vector3(1, 1, 1));
+        _uiFactory.CreatePanelsRoot();
+        _uiFactory.CreateMenuRoot();
     }
 
     public override void Update()

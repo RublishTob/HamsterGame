@@ -1,5 +1,7 @@
 
 public interface IPersistentData
 {
-    public PlayerData PlayerData { get; set; }
+    public PlayerSave PlayerData { get;}
+    public LocalizationData LocalizateData { get;}
 }
+

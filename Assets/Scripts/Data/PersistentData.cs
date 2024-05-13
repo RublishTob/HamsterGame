@@ -1,5 +1,6 @@
 
 public class PersistentData : IPersistentData
 {
-    public PlayerData PlayerData { get; set;}
+    public PlayerSave PlayerData { get; set; }
+    public LocalizationData LocalizateData { get; set; }
 }

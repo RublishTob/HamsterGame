@@ -9,10 +9,16 @@ public class UIPresenterFactory
         _router = router;
         _localization = localization;
     }
-    public ButtonPresenter CreateButtonContoller(ButtonView view, TextKey type)
+    public ButtonPresenter CreateButtonContoller(ButtonView view, string id)
     {
-        ButtonPresenter buttonController = new ButtonPresenter(view, _router,_localization,"поменять id"); // поменять id
+        ButtonPresenter buttonController = new ButtonPresenter(view, _router,_localization, id);
+
         return buttonController;
+    }
+    public PanelPresenter CreatePanelContoller(PanelView view, string id)
+    {
+        PanelPresenter panelController = new PanelPresenter(view, _router, _localization, id);
+        return panelController;
     }
 
 }

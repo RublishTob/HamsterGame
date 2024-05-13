@@ -2,6 +2,6 @@
 public interface IDataProvider
 {
     public void Save();
-    public bool TryLoad();
+    public bool TryLoadLocalization(string path);
     public IPersistentData PersistentData { get;}
 }

@@ -1,44 +1,30 @@
-
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
 public class DataLocalProvider : IDataProvider
 {
-    private const string CONFIGURATION = "DataConfiguration";
-    private const string FILE_NAME = "PlayerSave";
     private const string SAVE_FILE_EXTENTION = ".json";
 
-    private IPersistentData _persistentData;
-    private IConfigData _config;
+    private string fileName;
+    private PersistentData _persistentData;
 
-    public DataLocalProvider(IPersistentData persistentData, IConfigData config)
+    public DataLocalProvider(PersistentData persistentData)
     {
         _persistentData = persistentData;
-        _config = config;
     }
 
     public IPersistentData PersistentData { get => _persistentData; }
     private string SavePath => Application.persistentDataPath;
-    private string FullPath => Path.Combine(SavePath, $"{FILE_NAME}{SAVE_FILE_EXTENTION}");
-    private bool IsDataAlreadyExist() => File.Exists( FullPath );
+    private string FullPath => Path.Combine(SavePath, $"{fileName}{SAVE_FILE_EXTENTION}");
+    private bool IsDataAlreadyExist() => File.Exists(FullPath);
 
-    public void SaveDataPlayer(PlayerData data) 
+    public void SaveDataPlayer(PlayerSave data) 
     {
         _persistentData.PlayerData = data;
         Save();
     }
-
-    //public IConfigData LoadConfig<T>() where T : IConfigData
-    //{
-    //    IConfigData config = 
-    //}
-    //public IPersistentData LoadData<T>() where T : IPersistentData
-    //{
-    //    IPersistentData data =
-    //}
-
-
     public void Save()
     {
         File.WriteAllText(FullPath, JsonConvert.SerializeObject(_persistentData.PlayerData, Formatting.Indented, new JsonSerializerSettings
@@ -46,12 +32,35 @@ public class DataLocalProvider : IDataProvider
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
         }));
     }
-    public bool TryLoad()
+    public bool TryLoadData()
     {
+        fileName = "PlayerSave";
+
         if (IsDataAlreadyExist() == false)
             return false;
 
-        _persistentData.PlayerData = JsonConvert.DeserializeObject<PlayerData>(File.ReadAllText(FullPath));
-        return true;    
+        _persistentData.PlayerData = JsonConvert.DeserializeObject<PlayerSave>(File.ReadAllText(FullPath));
+        return true;
     }
+    public bool TryLoadLocalization(string path) 
+    {
+        LocalizationData localization = new LocalizationData();
+
+        fileName = path;
+
+        if (IsDataAlreadyExist() == false)
+            return false;
+
+        if (path == "Ru")
+        {
+            localization.Ru = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(FullPath));
+        }
+        else if (path == "Eng")
+        {
+            localization.Eng = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(FullPath));
+        }
+
+        _persistentData.LocalizateData = localization;
+        return true;
+    } 
 }

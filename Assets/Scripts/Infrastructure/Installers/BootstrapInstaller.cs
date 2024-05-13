@@ -8,9 +8,10 @@ public class BootstrapInstaller : MonoInstaller
     [SerializeField] private GameStateMachine _stateMachine;
     public override void InstallBindings()
     {
-        Container.Bind<IPersistentData>().To<PersistentData>().FromNew().AsSingle();
+        Container.BindInterfacesAndSelfTo<PersistentData>().AsSingle();
         Container.Bind<Logger>().FromNew().AsSingle();
-        Container.Bind<DataLocalProvider>().FromNew().AsSingle();
+
+        Container.BindInterfacesAndSelfTo<DataLocalProvider>().AsSingle();
         Container.Bind<InputPlayer>().AsSingle();
         Container.Bind<SceneLoader>().FromInstance(_sceneLoader).AsSingle();
         Container.Bind<SoundSystem>().FromInstance(_soundSystem).AsSingle();
