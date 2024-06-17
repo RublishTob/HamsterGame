@@ -319,7 +319,12 @@ namespace UniRx
         {
             Dispose(true);
         }
-        
+
+        public static explicit operator ReactiveCollection<T>(List<int> v)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 

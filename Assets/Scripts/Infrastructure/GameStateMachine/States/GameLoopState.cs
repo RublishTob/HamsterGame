@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class GameLoopState : MonoBehaviour
+public class GameLoopState : GameState
 {
-    // Start is called before the first frame update
-    void Start()
+    private UIFactory _uiFactory;
+    public GameLoopState(GameStateMachine stateMachine, UIFactory uiFactory) : base(stateMachine)
     {
-        
+        _uiFactory = uiFactory;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Exit()
     {
-        
+        //Debug.Log("GameLoopStateExit");
+    }
+
+    public override void Start()
+    {
+        //Debug.Log("GameLoopStateStart");
+    }
+
+    public override void Update()
+    {
+        //Debug.Log("GameLoopStateUpdate");
     }
 }

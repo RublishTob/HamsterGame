@@ -16,7 +16,9 @@ public class GameStateMachine : MonoBehaviour
         _states = new Dictionary<Type, GameState>()
         {
             [typeof(InitializeGame)] = _gameStateFactory.Create<InitializeGame>(),
-            [typeof(Menu)] = _gameStateFactory.Create<Menu>()
+            [typeof(Menu)] = _gameStateFactory.Create<Menu>(),
+            [typeof(LoadLevelState)] = _gameStateFactory.Create<LoadLevelState>(),
+            [typeof(GameLoopState)] = _gameStateFactory.Create<GameLoopState>()
         };
         StartState<InitializeGame>();
     }

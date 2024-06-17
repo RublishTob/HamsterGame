@@ -70,10 +70,11 @@ public class UIFactory
         return panel;
     }
 
-    public GameObject CreateLoadBar(Vector3 transform)
+    public GameObject CreateLoadBar()
     {
         var prefab = _assetProvider.LoadAsset(Load);
-        var loadbar = (GameObject)Object.Instantiate(prefab, transform, Quaternion.identity);
+        var loadbar = (GameObject)Object.Instantiate(prefab, _root.transform);
+        _container.InjectGameObject(loadbar);
         return loadbar;
     }
 }

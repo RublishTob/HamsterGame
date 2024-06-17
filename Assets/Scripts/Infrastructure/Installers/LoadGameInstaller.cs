@@ -3,13 +3,12 @@ using UnityEngine;
 
 public class LoadGameInstaller : MonoInstaller
 {
-    [SerializeField] private InitializeButtonView _buttonContinius;
-    [SerializeField] private GameStateLoader _gsmLoader;
+    [SerializeField] private ButtonView _buttonContinius;
 
     public override void InstallBindings()
     {
-        Container.Bind<InitializeButtonView>().FromInstance(_buttonContinius).AsSingle();
+        Container.Bind<ButtonView>().FromInstance(_buttonContinius).AsTransient();
         Container.Bind<InitializeButtonPresenter>().AsSingle().NonLazy();
-        Container.Bind<GameStateLoader>().FromInstance(_gsmLoader).AsSingle();
+        Container.Bind<SoundSystemView>().AsSingle();
     }
 }

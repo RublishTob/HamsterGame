@@ -8,7 +8,6 @@ public class ChangeVideo : MonoBehaviour
     [SerializeField] private VideoClip[] _clip;
     void Start()
     {
-        _videoPlayer = GetComponent<VideoPlayer>();
         _videoPlayer.isLooping = false;
         _videoPlayer.clip = _clip[0];
         _videoPlayer.Play();

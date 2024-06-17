@@ -1,20 +1,43 @@
+
+using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
-public class SoundSystem : MonoBehaviour
+
+public class SoundSystem
 {
-    [SerializeField] private AudioClip[] _sounds;
+    private SoundSource _sourceSound;
+    private IPersistentData _data;
+    private IDataProvider _provider;
 
-    private AudioSource _audioSrc;
-
-    private void Start()
+    private ReactiveCollection<AudioClip> _sounds;
+    public SoundSystem( IPersistentData data, IDataProvider provider)
     {
-        _audioSrc = GetComponent<AudioSource>();
-    }
-    public void PlaySound(int clipNumber, float volume = 1f, bool destroyed = false, float p1 = 0.85f, float p2 = 1.2f)
-    {
-        AudioClip clip = _sounds[clipNumber];
-        _audioSrc.pitch = Random.Range(p1, p2);
-        _audioSrc.PlayOneShot(clip, volume);
-    }
+        _data = data;
+        _provider = provider;
 
+        _sounds = new ReactiveCollection<AudioClip>();
+        Volume = new ReactiveProperty<float>();
+
+        //Volume.Value = _data.Settings.Volume;
+        ChangeVolume(_data.Settings.Volume);
+    }
+    public ReactiveProperty<float> Volume;
+
+    public void ChangeVolume(float value)
+    {
+        Volume.Value = value;
+    }
+    public void SaveChanges() 
+    {
+        _data.Settings.Volume = Volume.Value;
+        _provider.Save();
+    }
+    public void ChangeListAudioClips(List<AudioClip> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            _sounds.Add(list[i]);
+        }
+    }
 }

@@ -2,30 +2,28 @@
 public class InitializeButtonPresenter
 {
     private const string KEY = "Continue";
-    private InitializeButtonView _view;
+    private ButtonView _view;
     private GameStateMachine _stateMachine;
-    private Localization _loacalization;
+    private LocalizationSystem _loacalization;
     private string _text;
 
-    public InitializeButtonPresenter(InitializeButtonView view, GameStateMachine stateMachine, Localization loacalization)
+    public InitializeButtonPresenter(ButtonView view, GameStateMachine stateMachine, LocalizationSystem loacalization)
     {
         _loacalization = loacalization;
         _view = view;
         _stateMachine = stateMachine;
         _text = _loacalization.GetString(KEY);
-        _view.SetText(_text);
+        _view.SetTitle(_text);
         Enable();
     }
 
     public void Enable()
     {
-        _view.SetEnable(true);
-        _view.Button.onClick.AddListener(Click);
+        _view.OnClick += Click;
     }
     public void Desable()
     {
-        _view.SetEnable(false);
-        _view.Button.onClick.RemoveListener(Click);
+        _view.OnClick -= Click;
     }
     public void Click()
     {
@@ -33,6 +31,6 @@ public class InitializeButtonPresenter
     }
     public void SetText()
     {
-        _view.SetText(_text);
+        _view.SetTitle(_text);
     }
 }
