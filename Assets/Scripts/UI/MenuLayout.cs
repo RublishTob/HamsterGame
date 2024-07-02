@@ -4,6 +4,7 @@ using Zenject;
 
 public class MenuLayout : MonoBehaviour
 {
+    [SerializeField] private ButtonView buttonView;
     private UIRouter _router;
     private UIFactory _buttonFactory;
     private UIPresenterFactory _presenterFactory;
@@ -26,27 +27,33 @@ public class MenuLayout : MonoBehaviour
     }
     private void CreateButtons()
     {
-        var newGameButton = _buttonFactory.CreateButton();
-        NavigateButtonPresenter newGameButtonPresenter = _presenterFactory.CreateButtonContoller(newGameButton.GetComponent<ButtonView>(), "NewGame");
+        buttonView = Instantiate(buttonView, transform);
+        NavigateButtonPresenter newGameButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "NewGame");
         newGameButtonPresenter.Show();
         _buttons.Add(newGameButtonPresenter);
 
-        var loadButton = _buttonFactory.CreateButton();
-        NavigateButtonPresenter loadButtonPresenter = _presenterFactory.CreateButtonContoller(loadButton.GetComponent<ButtonView>(), "Settings");
+        buttonView = Instantiate(buttonView, transform);
+        NavigateButtonPresenter loadButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "Settings");
         loadButtonPresenter.Show();
         _buttons.Add(loadButtonPresenter);
 
-        var settingsButton = _buttonFactory.CreateButton();
-        NavigateButtonPresenter settingsButtonPresenter = _presenterFactory.CreateButtonContoller(settingsButton.GetComponent<ButtonView>(), "LoadGame");
+        buttonView = Instantiate(buttonView, transform);
+        NavigateButtonPresenter settingsButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "LoadGame");
         settingsButtonPresenter.Show();
         _buttons.Add(settingsButtonPresenter);
 
-        var exitGameButton = _buttonFactory.CreateButton();
-        NavigateButtonPresenter exitPresenter = _presenterFactory.CreateButtonContoller(exitGameButton.GetComponent<ButtonView>(), "ExitGame");
+        buttonView = Instantiate(buttonView, transform);
+        NavigateButtonPresenter exitPresenter = _presenterFactory.CreateButtonContoller(buttonView, "ExitGame");
         exitPresenter.Show();
         _buttons.Add(exitPresenter);
     }
-
+    private void OnDestroy()
+    {
+        if(_buttons.Count > 0)
+        {
+            _buttons.Clear();
+        }
+    }
     private void ShowMenu()
     {
         gameObject.SetActive(true);

@@ -89,3 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2ccba728ae51c47a231701bf172ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _settingPanelView: {fileID: 2739737208193680645, guid: 5e0cc28da0e8b4847a06e7c91b5fc5ee, type: 3}
+  _gamePanelView: {fileID: 6511619779994552247, guid: af0443d985e1f034caf042b0a5f2d921, type: 3}
+  _loadPanelView: {fileID: 3883140065573826276, guid: aa9d0b38c4cc6174a945e1c67071459f, type: 3}

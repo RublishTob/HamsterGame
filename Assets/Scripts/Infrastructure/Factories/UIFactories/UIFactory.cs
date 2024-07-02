@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
-public class UIFactory
+public class UIFactory : MonoBehaviour
 {
     private const string Root = "Prefabs/Root";
     private const string Panels = "Prefabs/Panels";
@@ -15,65 +15,32 @@ public class UIFactory
 
     private IAssetProvider _assetProvider;
 
-    private GameObject _panels;
-    private GameObject _menu;
+    private PanelLayout _panels;
+    private MenuLayout _menu;
     private Canvas _root;
     private DiContainer _container;
 
-    public UIFactory (IAssetProvider assetProvider, DiContainer container)
+    [Inject]
+    private void Construct(IAssetProvider assetProvider, DiContainer container)
     {
         _assetProvider = assetProvider;
         _container = container;
     }
+    //public UIFactory (IAssetProvider assetProvider, DiContainer container)
+    //{
+    //    _assetProvider = assetProvider;
+    //    _container = container;
+    //}
     public void CreateRoot(Vector3 transform)
     {
         var prefab = _assetProvider.LoadAsset(Root);
-        _root = Object.Instantiate(prefab, transform, Quaternion.identity).GetComponent<Canvas>();
-    }
-    public void CreateMenuRoot()
-    {
-        var prefab = _assetProvider.LoadAsset(Menu);
-        _menu = (GameObject) Object.Instantiate(prefab, _root.transform);
-        _container.InjectGameObject(_menu);
-
-    }
-    public void CreatePanelsRoot()
-    {
-        var prefab = _assetProvider.LoadAsset(Panels);
-        _panels = (GameObject) Object.Instantiate(prefab, _root.transform);
-        _container.InjectGameObject(_panels);
-    }
-    public GameObject CreateButton()
-    {
-        var prefab = _assetProvider.LoadAsset(Button);
-        var button = (GameObject)Object.Instantiate(prefab, _menu.transform);
-        return button;
-    }
-    public GameObject CreatePanel(TypePanel type)
-    {
-        Object prefab = new();
-
-        switch(type)
-        {
-            case TypePanel.NewGame:
-                prefab = _assetProvider.LoadAsset(GamePanel);
-                break;
-            case TypePanel.Settings:
-                prefab = _assetProvider.LoadAsset(SettingsPanel);
-                break;
-            case TypePanel.LoadGame:
-                prefab = _assetProvider.LoadAsset(LoadPanel);
-                break;
-        }
-
-        var panel = (GameObject)Object.Instantiate(prefab, _panels.transform);
-        return panel;
+        _root = Instantiate(prefab, transform, Quaternion.identity).GetComponent<Canvas>();
     }
 
     public GameObject CreateLoadBar()
     {
         var prefab = _assetProvider.LoadAsset(Load);
-        var loadbar = (GameObject)Object.Instantiate(prefab, _root.transform);
+        var loadbar = (GameObject)Instantiate(prefab, _root.transform);
         _container.InjectGameObject(loadbar);
         return loadbar;
     }

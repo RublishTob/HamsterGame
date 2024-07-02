@@ -26,7 +26,8 @@ public class LoadLevelState : GameState
     public override void Start()
     {
         Debug.Log("LOADING...");
-        _uiFactory.CreateLoadBar();
+        //_uiFactory.CreateRoot();
+        //_uiFactory.CreateLoadBar();
         if (_data.StateLevelData == null)
         {
             LevelSave save = null;

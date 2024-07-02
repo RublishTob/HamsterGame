@@ -6,6 +6,7 @@ public class BootstrapInstaller : MonoInstaller
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private GameStateMachine _stateMachine;
     [SerializeField] private ScreenLook _screenLook;
+    [SerializeField] private UIFactory _uiFactory;
     public override void InstallBindings()
     {
         BindData();
@@ -47,7 +48,7 @@ public class BootstrapInstaller : MonoInstaller
     private void BindFactories()
     {
         //Container.Bind<UIPresenterFactory>().AsSingle();
-        Container.Bind<UIFactory>().AsSingle();
+        Container.Bind<UIFactory>().FromInstance(_uiFactory).AsSingle();
     }
     private void BindGameStates() 
     {

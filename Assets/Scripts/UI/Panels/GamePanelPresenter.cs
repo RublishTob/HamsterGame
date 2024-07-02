@@ -22,6 +22,7 @@ public class GamePanelPresenter : IPanel
     private SaveLoadSystem _repository;
     private LevelLoaderSystem _loaderSystem;
     private GameStateMachine _gameStateMachine;
+    private List<LevelViewConfig> _viewConfigs;
 
     private GamePanelView _view;
     public GamePanelPresenter(GamePanelView view, SceneUnlocker unlockerScene, SaveLoadSystem repository, SceneLoader loader, PersistentData data, UIRouter router, IConfigData config, LevelLoaderSystem loaderSystem, GameStateMachine gameStateMachine)
@@ -36,13 +37,14 @@ public class GamePanelPresenter : IPanel
         _repository = repository;
         _router.PanelEnable += Show;
         _router.MenuEnable += Hide;
-        foreach (var i in _config.Levels)
-        {
-            _view.InitLevelView(i);
-        }
-        Debug.Log(_config.Levels.Count());
+
         _loaderSystem = loaderSystem;
         _gameStateMachine = gameStateMachine;
+        _viewConfigs = new List<LevelViewConfig>();
+        foreach (var i in _config.Levels)
+        {
+            _viewConfigs.Add(i);
+        }
     }
     public string Id { get => "NewGamePanel"; }
     public int CurrentLevel { get; private set; }
@@ -56,14 +58,18 @@ public class GamePanelPresenter : IPanel
         {
             return;
         }
-        _view.ChooseLevel += Chooselevel;
         _view.ToGame.onClick.AddListener(Load);
         _view.ButtonBack.OnBack += OnBack;
         _view.gameObject.SetActive(true);
+        for(int i = 0; i< _viewConfigs.Count; i++)
+        {
+            _view.Levels[i].SetImage(_viewConfigs[i].levelImage);
+            _view.Levels[i].SetName(_viewConfigs[i].level);
+            _view.Levels[i].OnLevelClick += Chooselevel;
+        }
     }
     public void Hide() 
     {
-        _view.ChooseLevel -= Chooselevel;
         _view.ToGame.onClick.RemoveListener(Load);
         _view.ButtonBack.OnBack -= OnBack;
         _view.gameObject.SetActive(false);

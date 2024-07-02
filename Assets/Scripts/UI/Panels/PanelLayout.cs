@@ -13,6 +13,10 @@ public class PanelLayout : MonoBehaviour
     private SavePanelPresenter _saveGamePanelPresenter;
     private GamePanelPresenter _gamePanelPresenter;
 
+    [SerializeField] private SettingPanelView _settingPanelView;
+    [SerializeField] private GamePanelView _gamePanelView;
+    [SerializeField] private LoadPanelView _loadPanelView;
+
     private List<IPanel> _panels;
 
     [Inject]
@@ -32,16 +36,16 @@ public class PanelLayout : MonoBehaviour
 
     private void CreatePanels()
     {
-        var settingsGamePanel = _panelFactory.CreatePanel(TypePanel.Settings);
-        settingsGamePanelPresenter = _presenterFactory.CreateSettingsPanelContoller(settingsGamePanel.GetComponent<SettingPanelView>());
+        _settingPanelView = Instantiate(_settingPanelView, transform);
+        settingsGamePanelPresenter = _presenterFactory.CreateSettingsPanelContoller(_settingPanelView);
         _panels.Add(settingsGamePanelPresenter);
 
-        var loadGamePanel = _panelFactory.CreatePanel(TypePanel.LoadGame);
-        _loadPanelPresenter = _presenterFactory.CreateLoadPanelContoller(loadGamePanel.GetComponent<LoadPanelView>());
+        _loadPanelView = Instantiate(_loadPanelView, transform);
+        _loadPanelPresenter = _presenterFactory.CreateLoadPanelContoller(_loadPanelView);
         _panels.Add(_loadPanelPresenter);
 
-        var newGamePanel = _panelFactory.CreatePanel(TypePanel.NewGame);
-        _gamePanelPresenter = _presenterFactory.CreateGamePanelContoller(newGamePanel.GetComponent<GamePanelView>());
+        _gamePanelView = Instantiate(_gamePanelView, transform);
+        _gamePanelPresenter = _presenterFactory.CreateGamePanelContoller(_gamePanelView);
         _panels.Add(_gamePanelPresenter);
     }
     private void ShowPanel(string buttonKey)
@@ -87,5 +91,11 @@ public class PanelLayout : MonoBehaviour
             _panels[i].Hide();
         }
         gameObject.SetActive(false);
+    }
+    private void OnDestroy()
+    {
+        _router.MenuEnable -= HideAllPanel;
+        _router.PanelEnable -= ShowPanel;
+        //_panels.Clear();
     }
 }

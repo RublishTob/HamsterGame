@@ -369,7 +369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Language
+  m_text: "\u042F\u0437\u044B\u043A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d703c19d2bc2a36409bd5dda40ce8733, type: 2}
   m_sharedMaterial: {fileID: -985153647049259744, guid: d703c19d2bc2a36409bd5dda40ce8733, type: 2}
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mouse sensitivity '
+  m_text: "\u041C\u044B\u0448\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d703c19d2bc2a36409bd5dda40ce8733, type: 2}
   m_sharedMaterial: {fileID: -985153647049259744, guid: d703c19d2bc2a36409bd5dda40ce8733, type: 2}
@@ -1123,9 +1123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Volume
-
-'
+  m_text: "\u041C\u0443\u0437\u044B\u043A\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d703c19d2bc2a36409bd5dda40ce8733, type: 2}
   m_sharedMaterial: {fileID: -985153647049259744, guid: d703c19d2bc2a36409bd5dda40ce8733, type: 2}
@@ -3481,7 +3479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2669117566817112665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3783,7 +3781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7826061970126611537, guid: 9de0ede630d42d74abd53d482c9ec55e, type: 3}
       propertyPath: m_text
-      value: Settings
+      value: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
       objectReference: {fileID: 0}
     - target: {fileID: 7826061970126611537, guid: 9de0ede630d42d74abd53d482c9ec55e, type: 3}
       propertyPath: m_fontSize
