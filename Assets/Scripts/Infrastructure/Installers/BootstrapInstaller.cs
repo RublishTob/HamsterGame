@@ -37,6 +37,7 @@ public class BootstrapInstaller : MonoInstaller
         Container.Bind<VideoSystem>().AsSingle();
         Container.Bind<LevelLoaderSystem>().AsSingle();
         Container.Bind<RewardSystem>().AsSingle();
+        Container.Bind<SuccessSystem>().AsSingle();
         Container.Bind<LevelProgressService>().AsSingle();
 
         BindScreenResolution();

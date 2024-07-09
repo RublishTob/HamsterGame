@@ -9,6 +9,7 @@ public class InputHandler: MonoBehaviour
     private GlobalEventState _eventState;
     private Vector2 _vectorOfInput;
     private Vector3 _vectorOfMove;
+    private bool _isStartedGame;
     public Vector3 MouseLook { get; private set; }
 
     [Inject]
@@ -22,19 +23,29 @@ public class InputHandler: MonoBehaviour
         _playerInput.Mover.Jump.started += Jump;
         _movable = FindObjectOfType<Movable>();
         _eventState.IsPaused += Pause;
+        _eventState.IsStarted += StartGame;
+        _isStartedGame = true;
     }
     private void Update()
     {
-        _vectorOfInput = _playerInput.Mover.MoveWalk.ReadValue<Vector2>().normalized;
-        _vectorOfMove = new Vector3(_vectorOfInput.x, 0, _vectorOfInput.y);
-        Move();
-        MouseLook = _playerInput.Mover.MouseLook.ReadValue<Vector2>();
+        if(_isStartedGame)
+        {
+            _vectorOfInput = _playerInput.Mover.MoveWalk.ReadValue<Vector2>().normalized;
+            _vectorOfMove = new Vector3(_vectorOfInput.x, 0, _vectorOfInput.y);
+            Move();
+            MouseLook = _playerInput.Mover.MouseLook.ReadValue<Vector2>();
+        }
     }
     public void Pause()
     {
         _vectorOfInput = Vector2.zero;
-        _vectorOfMove = Vector3.zero;
-        MouseLook = Vector3.zero;
+        _vectorOfMove = Vector2.zero;
+        MouseLook = Vector2.zero;
+        _isStartedGame = false;
+    }
+    public void StartGame()
+    {
+        _isStartedGame = true;
     }
     private void Jump(InputAction.CallbackContext obj)
     {

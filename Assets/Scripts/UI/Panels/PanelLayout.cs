@@ -53,6 +53,23 @@ public class PanelLayout : MonoBehaviour
         _loadPanelPresenter = _presenterFactory.CreateLoadPanelContoller(_loadPanelView);
         _panels.Add(_loadPanelPresenter);
     }
+    private void CreateGamePanels()
+    {
+        var settingPanelView = Resources.Load("Prefabs/SettingsPanel");
+        _settingPanelView = Instantiate(settingPanelView, transform).GetComponent<SettingPanelView>();
+        settingsGamePanelPresenter = _presenterFactory.CreateSettingsPanelContoller(_settingPanelView);
+        _panels.Add(settingsGamePanelPresenter);
+
+        var gamePanelView = Resources.Load("Prefabs/NewGamePanel");
+        _gamePanelView = Instantiate(gamePanelView, transform).GetComponent<GamePanelView>();
+        _gamePanelPresenter = _presenterFactory.CreateGamePanelContoller(_gamePanelView);
+        _panels.Add(_gamePanelPresenter);
+
+        var loadPanelView = Resources.Load("Prefabs/LoadPanel");
+        _loadPanelView = Instantiate(loadPanelView, transform).GetComponent<LoadPanelView>();
+        _loadPanelPresenter = _presenterFactory.CreateLoadPanelContoller(_loadPanelView);
+        _panels.Add(_loadPanelPresenter);
+    }
     private void ShowPanel(string buttonKey)
     {
         gameObject.SetActive(true);

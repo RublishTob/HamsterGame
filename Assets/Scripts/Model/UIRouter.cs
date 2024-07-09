@@ -6,6 +6,8 @@ public class UIRouter
     public event Action<string> PanelEnable;
     public event Action MenuEnable;
     public event Action AllMenuDisable;
+    public event Action LooseMenu;
+    public event Action WinMenu;
 
     private List<string> KeyPanels;
     private List<string> KeyMenus;
@@ -32,6 +34,14 @@ public class UIRouter
         {
             MenuEnable?.Invoke();
         }
+    }
+    public void OpenLooseMenu()
+    {
+        LooseMenu?.Invoke();
+    }
+    public void OpenWinMenu()
+    {
+         WinMenu?.Invoke();
     }
     private bool IsValid ( List<string>KeyElements, string key)
     {
