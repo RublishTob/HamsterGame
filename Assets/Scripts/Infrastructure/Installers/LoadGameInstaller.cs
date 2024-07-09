@@ -9,6 +9,5 @@ public class LoadGameInstaller : MonoInstaller
     {
         Container.Bind<ButtonView>().FromInstance(_buttonContinius).AsTransient();
         Container.Bind<InitializeButtonPresenter>().AsSingle().NonLazy();
-        Container.Bind<SoundSystemView>().AsSingle();
     }
 }

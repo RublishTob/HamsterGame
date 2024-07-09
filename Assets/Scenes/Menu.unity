@@ -133,15 +133,15 @@ PrefabInstance:
     - target: {fileID: 360428593647729018, guid: 96a842e74f47fea43b4a0dcb50ff6275, type: 3}
       propertyPath: _gamePanelView
       value: 
-      objectReference: {fileID: 6511619779994552247, guid: af0443d985e1f034caf042b0a5f2d921, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 360428593647729018, guid: 96a842e74f47fea43b4a0dcb50ff6275, type: 3}
       propertyPath: _loadPanelView
       value: 
-      objectReference: {fileID: 3883140065573826276, guid: aa9d0b38c4cc6174a945e1c67071459f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 360428593647729018, guid: 96a842e74f47fea43b4a0dcb50ff6275, type: 3}
       propertyPath: _settingPanelView
       value: 
-      objectReference: {fileID: 2739737208193680645, guid: 5e0cc28da0e8b4847a06e7c91b5fc5ee, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 961366106106389051, guid: 96a842e74f47fea43b4a0dcb50ff6275, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -769,7 +769,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

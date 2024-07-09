@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "MenuEnable",
+                    "type": "Button",
+                    "id": "9fcdeb68-42c4-435e-85d0-d6639e463a89",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -154,6 +163,17 @@
                     "action": "MouseLook",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "82a1739c-d878-42cb-a641-7501dec01c92",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard and Mouse",
+                    "action": "MenuEnable",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

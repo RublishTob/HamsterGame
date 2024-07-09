@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UniRx;
 
@@ -38,14 +39,19 @@ public class SettingPanelPresenter : IPanel
         _mouseSystem = mouseSystem;
         _videoSystem = videoSystem;
 
-        _router.PanelEnable += Show;
-        _router.MenuEnable += Hide;
+        //_router.PanelEnable += Show;
+        //_router.MenuEnable += Hide;
         _buttonLangPresenters = new List<BtnLangPresenter>();
         _localization.TranslateText += OnLocalizePenelTextes;
         CreateButtonLanguage();
         OnLocalizePenelTextes();
         _view.Volume.onValueChanged.AddListener(delegate { ChangeVolumeSound(); }) ;
         _view.Resolution.onValueChanged.AddListener(delegate { ChangeResolution(); });
+    }
+    ~SettingPanelPresenter()
+    {
+        _router.PanelEnable -= Show;
+        _router.MenuEnable -= Hide;
     }
     public string Id { get => "SettingsPanel"; }
     public void Show(string panel)

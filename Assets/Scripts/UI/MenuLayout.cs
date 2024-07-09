@@ -23,6 +23,7 @@ public class MenuLayout : MonoBehaviour
         CreateButtons();
         _router.MenuEnable += ShowMenu;
         _router.PanelEnable += HideMenu;
+        _router.AllMenuDisable += Hide;
         ShowMenu();
     }
     private void CreateButtons()
@@ -53,6 +54,9 @@ public class MenuLayout : MonoBehaviour
         {
             _buttons.Clear();
         }
+        _router.MenuEnable -= ShowMenu;
+        _router.PanelEnable -= HideMenu;
+        _router.AllMenuDisable -= Hide;
     }
     private void ShowMenu()
     {
@@ -60,6 +64,11 @@ public class MenuLayout : MonoBehaviour
     }
 
     private void HideMenu(string obj)
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void Hide()
     {
         gameObject.SetActive(false);
     }

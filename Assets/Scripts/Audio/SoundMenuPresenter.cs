@@ -4,8 +4,8 @@ public class SoundMenuPresenter
 {
     private SoundMenu _soundMenu;
     private SoundSystem _soundSystem;
-
     private CompositeDisposable _compositeDisposable = new CompositeDisposable();
+
     public SoundMenuPresenter(SoundMenu sound, SoundSystem soundSystem) 
     {
         _soundMenu = sound;
@@ -18,6 +18,10 @@ public class SoundMenuPresenter
         _soundSystem.Volume.Subscribe(value =>
         {
             _soundMenu.SetVolume(value);
-        });
+        }).AddTo(_compositeDisposable);
+    }
+    public void Disable()
+    {
+        _compositeDisposable.Clear();
     }
 }

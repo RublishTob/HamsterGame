@@ -10,6 +10,7 @@ public class PlayerViewDetect: MonoBehaviour
     [SerializeField] private float _radiousCheckGround;
     [SerializeField] private LayerMask _layerCheckGround;
     [SerializeField] private LayerMask _layerCheckStairs;
+
     private CharacterController _characterController;
 
     public bool IsOnGround { get; private set; }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class GamePanelPresenter : IPanel
+public class GamePanelPresenter : IPanel, IDisposable
 {
     public event Action LoadLevel;
 
@@ -35,8 +35,8 @@ public class GamePanelPresenter : IPanel
         _config = config;
 
         _repository = repository;
-        _router.PanelEnable += Show;
-        _router.MenuEnable += Hide;
+        //_router.PanelEnable += Show;
+        //_router.MenuEnable += Hide;
 
         _loaderSystem = loaderSystem;
         _gameStateMachine = gameStateMachine;
@@ -45,6 +45,11 @@ public class GamePanelPresenter : IPanel
         {
             _viewConfigs.Add(i);
         }
+    }
+    ~GamePanelPresenter()
+    {
+        _router.PanelEnable -= Show;
+        _router.MenuEnable -= Hide;
     }
     public string Id { get => "NewGamePanel"; }
     public int CurrentLevel { get; private set; }
@@ -85,5 +90,10 @@ public class GamePanelPresenter : IPanel
     {
         _loaderSystem.ChangeCurrentScene(CurrentLevel);
         _gameStateMachine.SwichState<LoadLevelState>();
+    }
+    public void Dispose()
+    {
+        _router.PanelEnable -= Show;
+        _router.MenuEnable -= Hide;
     }
 }

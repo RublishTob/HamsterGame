@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.LookDev;
@@ -13,7 +14,8 @@ public class LoadLevelState : GameState
     private SaveLoadSystem _saveLoadSystem;
     private PersistentData _data;
     private IDataProvider _povider;
-    public LoadLevelState(GameStateMachine stateMachine, UIFactory uIFactory, LevelLoaderSystem levelLoader, SceneLoader loader, SaveLoadSystem saveLoadSystem, PersistentData data, IDataProvider povider) : base(stateMachine)
+    private UIRouter _router;
+    public LoadLevelState(GameStateMachine stateMachine, UIFactory uIFactory, LevelLoaderSystem levelLoader, SceneLoader loader, SaveLoadSystem saveLoadSystem, PersistentData data, IDataProvider povider, UIRouter router) : base(stateMachine)
     {
         _uiFactory = uIFactory;
         _levelLoader = levelLoader;
@@ -22,12 +24,10 @@ public class LoadLevelState : GameState
         _saveLoadSystem = saveLoadSystem;
         _data = data;
         _povider = povider;
+        _router = router;
     }
     public override void Start()
     {
-        Debug.Log("LOADING...");
-        //_uiFactory.CreateRoot();
-        //_uiFactory.CreateLoadBar();
         if (_data.StateLevelData == null)
         {
             LevelSave save = null;
@@ -45,14 +45,13 @@ public class LoadLevelState : GameState
     }
     public override void Update()
     {
-        Debug.Log("UPDATE LOADING...");
         if (_sceneLoader.IsDone)
         {
             _gameStateMachine.SwichState<GameLoopState>();
+            _router.HideAll();
         }
     }
     public override void Exit()
     {
-        Debug.Log("EXIT LOADING...");
     }
 }

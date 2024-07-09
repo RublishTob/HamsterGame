@@ -32,8 +32,6 @@ public class LoadPanelPresenter : IPanel
         _repository = repository;
         _loaderSystem = loaderSystem;
         _gameStateMachine = gameStateMachine;
-        _router.PanelEnable += Show;
-        _router.MenuEnable += Hide;
     }
     public string Id { get => "LoadGamePanel"; }
     public string ChoosenLevel { get; private set; }
@@ -83,6 +81,8 @@ public class LoadPanelPresenter : IPanel
     public void Hide()
     {
         _view.Button.onClick.RemoveListener(Load);
+        _view.Back.OnBack -= OnBack;
+        _view.OnSaveChoosen -= ChoisenLevel;
         _view.gameObject.SetActive(false);
     }
 

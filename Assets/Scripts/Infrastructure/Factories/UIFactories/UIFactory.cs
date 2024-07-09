@@ -26,11 +26,7 @@ public class UIFactory : MonoBehaviour
         _assetProvider = assetProvider;
         _container = container;
     }
-    //public UIFactory (IAssetProvider assetProvider, DiContainer container)
-    //{
-    //    _assetProvider = assetProvider;
-    //    _container = container;
-    //}
+
     public void CreateRoot(Vector3 transform)
     {
         var prefab = _assetProvider.LoadAsset(Root);

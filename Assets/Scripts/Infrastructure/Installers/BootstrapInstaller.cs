@@ -10,16 +10,10 @@ public class BootstrapInstaller : MonoInstaller
     public override void InstallBindings()
     {
         BindData();
-
         BindServices();
-
-        BindFactories();
-
         BindGameStates();
-
         Container.Bind<GameStateMachine>().FromInstance(_stateMachine).AsSingle();
-        Container.Bind<UIPresenterFactory>().AsSingle();
-
+        BindFactories();
     }
     private void BindData()
     {
@@ -42,12 +36,15 @@ public class BootstrapInstaller : MonoInstaller
         Container.Bind<MouseSystem>().AsSingle();
         Container.Bind<VideoSystem>().AsSingle();
         Container.Bind<LevelLoaderSystem>().AsSingle();
+        Container.Bind<RewardSystem>().AsSingle();
+        Container.Bind<LevelProgressService>().AsSingle();
+
         BindScreenResolution();
 
     }
     private void BindFactories()
     {
-        //Container.Bind<UIPresenterFactory>().AsSingle();
+        Container.Bind<UIPresenterFactory>().AsSingle();
         Container.Bind<UIFactory>().FromInstance(_uiFactory).AsSingle();
     }
     private void BindGameStates() 

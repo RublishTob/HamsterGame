@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
@@ -13,9 +14,9 @@ public class PanelLayout : MonoBehaviour
     private SavePanelPresenter _saveGamePanelPresenter;
     private GamePanelPresenter _gamePanelPresenter;
 
-    [SerializeField] private SettingPanelView _settingPanelView;
-    [SerializeField] private GamePanelView _gamePanelView;
-    [SerializeField] private LoadPanelView _loadPanelView;
+    private SettingPanelView _settingPanelView;
+    private GamePanelView _gamePanelView;
+    private LoadPanelView _loadPanelView;
 
     private List<IPanel> _panels;
 
@@ -30,23 +31,27 @@ public class PanelLayout : MonoBehaviour
 
         _router.MenuEnable += HideAllPanel;
         _router.PanelEnable += ShowPanel;
+        _router.AllMenuDisable += HideAllPanel;
         CreatePanels();
         HideAllPanel();
     }
 
     private void CreatePanels()
     {
-        _settingPanelView = Instantiate(_settingPanelView, transform);
+        var settingPanelView = Resources.Load("Prefabs/SettingsPanel");
+        _settingPanelView = Instantiate(settingPanelView, transform).GetComponent<SettingPanelView>();
         settingsGamePanelPresenter = _presenterFactory.CreateSettingsPanelContoller(_settingPanelView);
         _panels.Add(settingsGamePanelPresenter);
 
-        _loadPanelView = Instantiate(_loadPanelView, transform);
-        _loadPanelPresenter = _presenterFactory.CreateLoadPanelContoller(_loadPanelView);
-        _panels.Add(_loadPanelPresenter);
-
-        _gamePanelView = Instantiate(_gamePanelView, transform);
+        var gamePanelView = Resources.Load("Prefabs/NewGamePanel");
+        _gamePanelView = Instantiate(gamePanelView, transform).GetComponent<GamePanelView>();
         _gamePanelPresenter = _presenterFactory.CreateGamePanelContoller(_gamePanelView);
         _panels.Add(_gamePanelPresenter);
+
+        var loadPanelView = Resources.Load("Prefabs/LoadPanel");
+        _loadPanelView = Instantiate(loadPanelView, transform).GetComponent<LoadPanelView>();
+        _loadPanelPresenter = _presenterFactory.CreateLoadPanelContoller(_loadPanelView);
+        _panels.Add(_loadPanelPresenter);
     }
     private void ShowPanel(string buttonKey)
     {
@@ -81,7 +86,6 @@ public class PanelLayout : MonoBehaviour
                 presenter.Show(name);
                 break;
             }
-            //_panels[i].Hide();
         }
     }
     private void HideAllPanel()
@@ -96,6 +100,6 @@ public class PanelLayout : MonoBehaviour
     {
         _router.MenuEnable -= HideAllPanel;
         _router.PanelEnable -= ShowPanel;
-        //_panels.Clear();
+        _router.AllMenuDisable -= HideAllPanel;
     }
 }

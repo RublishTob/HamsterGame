@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-/*
- * Summary: 
- * this class is mediator, it response for navigation other panels and menu/button
-*/
+
 public class UIRouter
 {
     public event Action<string> PanelEnable;
     public event Action MenuEnable;
+    public event Action AllMenuDisable;
 
     private List<string> KeyPanels;
     private List<string> KeyMenus;
@@ -16,6 +14,10 @@ public class UIRouter
     {
         KeyMenus = new List<string>() { "NewGame","LoadGame","Settings","BackMenu", "SaveLevel" };
         KeyPanels = new List<string>() { "NewGamePanel", "LoadGamePanel", "SettingsPanel", "SavePanel" };
+    }
+    public void HideAll()
+    {
+        AllMenuDisable?.Invoke();
     }
     public void OpenPanel(string key)
     {

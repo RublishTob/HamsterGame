@@ -1,5 +1,3 @@
-
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UniRx;
@@ -8,16 +6,7 @@ public class SaveLoadSystem
 {
     private PersistentData _data;
     private DataLocalProvider _provider;
-
     private List<LevelSave> _levelSaves;
-    public IEnumerable<LevelSave> LevelSaves => _levelSaves;
-    public ReactiveCommand<LevelSave> CreateLevel { get; private set; }
-    public ReactiveCommand ReadLevel { get; private set; }
-    public ReactiveCommand ReadAllLevel { get; private set; }
-    public ReactiveCommand UpdateLevel { get; private set; }
-    public ReactiveCommand DeleteLevel { get; private set; }
-
-
     public SaveLoadSystem(PersistentData data, DataLocalProvider provider) 
     { 
         _data = data;
@@ -29,6 +18,12 @@ public class SaveLoadSystem
         UpdateLevel = new ReactiveCommand();
         DeleteLevel = new ReactiveCommand();
     }
+    public IEnumerable<LevelSave> LevelSaves => _levelSaves;
+    public ReactiveCommand<LevelSave> CreateLevel { get; private set; }
+    public ReactiveCommand ReadLevel { get; private set; }
+    public ReactiveCommand ReadAllLevel { get; private set; }
+    public ReactiveCommand UpdateLevel { get; private set; }
+    public ReactiveCommand DeleteLevel { get; private set; }
     public void Create(LevelSave save)
     {
         _data.levelSaves.Add(save);
@@ -38,7 +33,6 @@ public class SaveLoadSystem
     public IEnumerable<LevelSave> ReadAllSaves()
     {
         return _data.LevelSaves;
-        //удалить
     }
     public void LoadAllSaves()
     {

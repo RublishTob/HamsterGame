@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public FloatReactiveProperty Progress = new FloatReactiveProperty();
-
     private AsyncOperation _asyncOperation;
     public bool IsDone { get => _asyncOperation.isDone; }
+    public FloatReactiveProperty Progress = new FloatReactiveProperty();
 
     public void LoadScene(int sceneId, Action onLoaded = null)
     {
         StartCoroutine(LoadCurrentScene(sceneId,onLoaded));
     }
+
     private IEnumerator LoadCurrentScene(int sceneId, Action onLoaded = null)
     {
         yield return null;

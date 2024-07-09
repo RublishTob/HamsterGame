@@ -53,6 +53,15 @@ public partial class @InputPlayer : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MenuEnable"",
+                    ""type"": ""Button"",
+                    ""id"": ""9fcdeb68-42c4-435e-85d0-d6639e463a89"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -176,6 +185,17 @@ public partial class @InputPlayer : IInputActionCollection2, IDisposable
                     ""action"": ""MouseLook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82a1739c-d878-42cb-a641-7501dec01c92"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard and Mouse"",
+                    ""action"": ""MenuEnable"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -193,6 +213,7 @@ public partial class @InputPlayer : IInputActionCollection2, IDisposable
         m_Mover_MoveWalk = m_Mover.FindAction("MoveWalk", throwIfNotFound: true);
         m_Mover_Jump = m_Mover.FindAction("Jump", throwIfNotFound: true);
         m_Mover_MouseLook = m_Mover.FindAction("MouseLook", throwIfNotFound: true);
+        m_Mover_MenuEnable = m_Mover.FindAction("MenuEnable", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -255,6 +276,7 @@ public partial class @InputPlayer : IInputActionCollection2, IDisposable
     private readonly InputAction m_Mover_MoveWalk;
     private readonly InputAction m_Mover_Jump;
     private readonly InputAction m_Mover_MouseLook;
+    private readonly InputAction m_Mover_MenuEnable;
     public struct MoverActions
     {
         private @InputPlayer m_Wrapper;
@@ -262,6 +284,7 @@ public partial class @InputPlayer : IInputActionCollection2, IDisposable
         public InputAction @MoveWalk => m_Wrapper.m_Mover_MoveWalk;
         public InputAction @Jump => m_Wrapper.m_Mover_Jump;
         public InputAction @MouseLook => m_Wrapper.m_Mover_MouseLook;
+        public InputAction @MenuEnable => m_Wrapper.m_Mover_MenuEnable;
         public InputActionMap Get() { return m_Wrapper.m_Mover; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -280,6 +303,9 @@ public partial class @InputPlayer : IInputActionCollection2, IDisposable
                 @MouseLook.started -= m_Wrapper.m_MoverActionsCallbackInterface.OnMouseLook;
                 @MouseLook.performed -= m_Wrapper.m_MoverActionsCallbackInterface.OnMouseLook;
                 @MouseLook.canceled -= m_Wrapper.m_MoverActionsCallbackInterface.OnMouseLook;
+                @MenuEnable.started -= m_Wrapper.m_MoverActionsCallbackInterface.OnMenuEnable;
+                @MenuEnable.performed -= m_Wrapper.m_MoverActionsCallbackInterface.OnMenuEnable;
+                @MenuEnable.canceled -= m_Wrapper.m_MoverActionsCallbackInterface.OnMenuEnable;
             }
             m_Wrapper.m_MoverActionsCallbackInterface = instance;
             if (instance != null)
@@ -293,6 +319,9 @@ public partial class @InputPlayer : IInputActionCollection2, IDisposable
                 @MouseLook.started += instance.OnMouseLook;
                 @MouseLook.performed += instance.OnMouseLook;
                 @MouseLook.canceled += instance.OnMouseLook;
+                @MenuEnable.started += instance.OnMenuEnable;
+                @MenuEnable.performed += instance.OnMenuEnable;
+                @MenuEnable.canceled += instance.OnMenuEnable;
             }
         }
     }
@@ -311,5 +340,6 @@ public partial class @InputPlayer : IInputActionCollection2, IDisposable
         void OnMoveWalk(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMouseLook(InputAction.CallbackContext context);
+        void OnMenuEnable(InputAction.CallbackContext context);
     }
 }

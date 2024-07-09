@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
@@ -6,11 +5,9 @@ using UnityEngine;
 
 public class SoundSystem
 {
-    private SoundSource _sourceSound;
     private IPersistentData _data;
     private IDataProvider _provider;
 
-    private ReactiveCollection<AudioClip> _sounds;
     public SoundSystem( IPersistentData data, IDataProvider provider)
     {
         _data = data;
@@ -19,10 +16,10 @@ public class SoundSystem
         _sounds = new ReactiveCollection<AudioClip>();
         Volume = new ReactiveProperty<float>();
 
-        //Volume.Value = _data.Settings.Volume;
         ChangeVolume(_data.Settings.Volume);
     }
     public ReactiveProperty<float> Volume;
+    private ReactiveCollection<AudioClip> _sounds;
 
     public void ChangeVolume(float value)
     {
@@ -35,6 +32,7 @@ public class SoundSystem
     }
     public void ChangeListAudioClips(List<AudioClip> list)
     {
+        _sounds.Clear();
         for (int i = 0; i < list.Count; i++)
         {
             _sounds.Add(list[i]);
