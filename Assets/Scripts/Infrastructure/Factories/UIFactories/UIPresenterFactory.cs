@@ -17,6 +17,7 @@ public class UIPresenterFactory
     private LevelLoaderSystem _levelLoaderSystem;
     private DiContainer _container;
     private GameStateMachine _gameStateMachine;
+    private UIFactory _uiFactory;
 
     public UIPresenterFactory(
         UIRouter router,
@@ -77,6 +78,11 @@ public class UIPresenterFactory
     public GamePanelPresenter CreateGamePanelContoller(GamePanelView view)
     {
         GamePanelPresenter panelController = new GamePanelPresenter(view, _unlockScene, _saveSystem, _sceneLoader, _data, _router, _iConfigData, _levelLoaderSystem, _gameStateMachine);
+        return panelController;
+    }
+    public ResultPanelPresenter CreateResultPanelContoller(ResultPanelView view, ResultBackgroundContent content, bool isSuccess, string id)
+    {
+        ResultPanelPresenter panelController = new ResultPanelPresenter(view, _localization, content, _gameStateMachine, isSuccess, id);
         return panelController;
     }
 

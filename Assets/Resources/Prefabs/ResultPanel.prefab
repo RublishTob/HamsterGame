@@ -944,12 +944,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _background: {fileID: 7054065707452040957}
+  _resultText: {fileID: 7054065708861992219}
   _count: {fileID: 7389252032069228182}
-  _back: {fileID: 6722214507384323112}
+  Back: {fileID: 6722214507384323112}
   _load: {fileID: 9066989368508577973}
   _newGame: {fileID: 2759979865656335212}
-  textes:
-  - {fileID: 7054065708861992219}
+  Textes:
   - {fileID: 7054065708235000553}
   - {fileID: 7290799064630894631}
   - {fileID: 4572774042101150619}

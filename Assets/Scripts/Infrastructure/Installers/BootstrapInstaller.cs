@@ -5,7 +5,7 @@ public class BootstrapInstaller : MonoInstaller
 {
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private GameStateMachine _stateMachine;
-    [SerializeField] private ScreenLook _screenLook;
+    [SerializeField] private ScreenResolution _screenLook;
     [SerializeField] private UIFactory _uiFactory;
     public override void InstallBindings()
     {
@@ -26,6 +26,7 @@ public class BootstrapInstaller : MonoInstaller
     }
     private void BindServices()
     {
+        Container.Bind<GameStateMachineService>().AsSingle();
         Container.Bind<Logger>().FromNew().AsSingle();
         Container.Bind<InputPlayer>().AsSingle();
         Container.Bind<SceneLoader>().FromInstance(_sceneLoader).AsSingle();
@@ -58,7 +59,7 @@ public class BootstrapInstaller : MonoInstaller
     }
     private void BindScreenResolution()
     {
-        Container.Bind<ScreenLook>().FromInstance(_screenLook).AsSingle();
-        Container.Bind<ScreenLookPresenter>().FromNew().AsSingle().NonLazy();
+        Container.Bind<ScreenResolution>().FromInstance(_screenLook).AsSingle();
+        Container.Bind<ScreenResolutionPresenter>().FromNew().AsSingle().NonLazy();
     }
 }

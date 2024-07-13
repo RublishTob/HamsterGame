@@ -1,12 +1,14 @@
 
-using UnityEngine;
-
 public class Menu : GameState
 {
     private SceneLoader _sceneLoader;
-    public Menu(GameStateMachine stateMachine, SceneLoader sceneLoader) : base(stateMachine)
+    private UIFactory _uiFactory;
+    private GameStateMachineService _gameStateMachineService;
+    public Menu(GameStateMachine stateMachine, SceneLoader sceneLoader, UIFactory uiFactory, GameStateMachineService gameStateMachineService) : base(stateMachine)
     {
         _sceneLoader = sceneLoader;
+        _uiFactory = uiFactory;
+        _gameStateMachineService = gameStateMachineService;
     }
     public override void Start()
     {
@@ -21,5 +23,6 @@ public class Menu : GameState
     }
     public override void Exit()
     {
+        _gameStateMachineService.GameStateWacher.ChangeState();
     }
 }

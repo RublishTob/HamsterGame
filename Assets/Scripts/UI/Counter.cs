@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -11,10 +12,20 @@ public class Counter : MonoBehaviour
     private void Start()
     {
         _count = GetComponent<TMP_Text>();
+        gameObject.SetActive(false);
     }
-    private void Update()
+    public void StartCount()
     {
-        _seconds -= Time.deltaTime;
-        _count.text = Mathf.RoundToInt(_seconds).ToString();
+        gameObject.SetActive(true);
+        StartCoroutine(Count());
+    }
+    private IEnumerator Count()
+    {
+        while (_seconds >= 0)
+        {
+            _seconds -= Time.deltaTime;
+            _count.text = Mathf.RoundToInt(_seconds).ToString();
+            yield return null;
+        }
     }
 }

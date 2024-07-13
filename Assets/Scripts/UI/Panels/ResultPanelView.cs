@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class ResultPanelView : MonoBehaviour
 {
     [SerializeField] private Image _background;
+    [SerializeField] private TMP_Text _resultText;
     [SerializeField] private TMP_Text _count;
 
-    [SerializeField] private Button _back;
+    [SerializeField] public Button Back;
     [SerializeField] private Button _load;
     [SerializeField] private Button _newGame;
 
-    [SerializeField] public List<TMP_Text> textes;
+    [SerializeField] public List<TMP_Text> Textes;
 
     public void SetBackground(Sprite image)
     {
@@ -21,5 +22,9 @@ public class ResultPanelView : MonoBehaviour
     public void SetCountOfCoin(string count)
     {
         _count.text = count;
+    }
+    public void SetResultText(string image)
+    {
+        _resultText.text = image;
     }
 }

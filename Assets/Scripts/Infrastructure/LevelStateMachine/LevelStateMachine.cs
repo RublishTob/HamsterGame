@@ -19,10 +19,10 @@ public class LevelStateMachine : MonoBehaviour
             [typeof(StartLevel)] = _levelStateFactory.Create<StartLevel>(),
             [typeof(PauseLevel)] = _levelStateFactory.Create<PauseLevel>(),
             [typeof(LevelWin)] = _levelStateFactory.Create<LevelWin>(),
-            [typeof(LevelLoose)] = _levelStateFactory.Create<LevelLoose>()
+            [typeof(LevelLoose)] = _levelStateFactory.Create<LevelLoose>(),
+            [typeof(TutorialLevel)] = _levelStateFactory.Create<TutorialLevel>()
         };
     }
-    
     void Update()
     {
         if (_currentState != null)

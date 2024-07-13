@@ -21,15 +21,10 @@ public class LoadBarShower : MonoBehaviour
         {
             LoadBar.fillAmount = value;
             LoadText.text = "«¿√–”« ¿  " + string.Format("{0:0}%", value * 100);
-            //ViewLoading();
+
         }).AddTo(_compositeDisposable);
-        Debug.Log("LOAD BAR HAS CREATED");
     }
-    //public void ViewLoading()
-    //{
-    //    LoadBar.fillAmount = progress;
-    //    LoadText.text = "«¿√–”« ¿  " + string.Format("{0:0}%", progress * 100);
-    //}
+
     public void DestroyThis()
     {
         Destroy(gameObject);

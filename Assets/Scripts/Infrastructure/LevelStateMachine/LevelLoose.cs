@@ -1,22 +1,28 @@
 
 public class LevelLoose : LevelState
 {
-    public LevelLoose(LevelStateMachine stateMachine) : base(stateMachine)
+    private UIRouter _router;
+    private GlobalEventState _globalEvent;
+    private MenuLayout _menuLayout;
+    public LevelLoose(LevelStateMachine stateMachine, UIRouter router, GlobalEventState globalEvent, MenuLayout menuLayout) : base(stateMachine)
     {
+        _router = router;
+        _globalEvent = globalEvent;
+        _menuLayout = menuLayout;
     }
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
+        _menuLayout.UnSubscribe();
     }
 
     public override void Start()
     {
-        throw new System.NotImplementedException();
+        _globalEvent.PauseGame();
+        _router.OpenLooseMenu();
     }
 
     public override void Update()
     {
-        throw new System.NotImplementedException();
     }
 }

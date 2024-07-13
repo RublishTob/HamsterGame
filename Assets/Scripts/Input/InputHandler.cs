@@ -22,7 +22,7 @@ public class InputHandler: MonoBehaviour
     {
         _playerInput.Mover.Jump.started += Jump;
         _movable = FindObjectOfType<Movable>();
-        _eventState.IsPaused += Pause;
+        _eventState.IsPaused += PauseGame;
         _eventState.IsStarted += StartGame;
         _isStartedGame = true;
     }
@@ -35,12 +35,13 @@ public class InputHandler: MonoBehaviour
             Move();
             MouseLook = _playerInput.Mover.MouseLook.ReadValue<Vector2>();
         }
+        else
+        {
+            _movable.ChangeHorizontalDirection(Vector3.zero);
+        }
     }
-    public void Pause()
+    public void PauseGame()
     {
-        _vectorOfInput = Vector2.zero;
-        _vectorOfMove = Vector2.zero;
-        MouseLook = Vector2.zero;
         _isStartedGame = false;
     }
     public void StartGame()
@@ -63,7 +64,7 @@ public class InputHandler: MonoBehaviour
     {
         _playerInput.Disable();
         _playerInput.Mover.Jump.started -= Jump;
-        _eventState.IsPaused -= Pause;
+        _eventState.IsPaused -= PauseGame;
     }
 }
 

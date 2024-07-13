@@ -58,6 +58,12 @@ public class MenuLayout : MonoBehaviour
         _router.PanelEnable -= HideMenu;
         _router.AllMenuDisable -= Hide;
     }
+    public void UnSubscribe()
+    {
+        _router.MenuEnable -= ShowMenu;
+        _router.PanelEnable -= HideMenu;
+        _router.AllMenuDisable -= Hide;
+    }
     private void ShowMenu()
     {
         gameObject.SetActive(true);

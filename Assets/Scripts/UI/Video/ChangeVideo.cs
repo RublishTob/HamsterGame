@@ -8,9 +8,11 @@ public class ChangeVideo : MonoBehaviour
     [SerializeField] private VideoClip[] _clip;
     void Start()
     {
+        _videoPlayer = GetComponent<VideoPlayer>();
+        _videoPlayer.targetCamera = Camera.main;
+        _videoPlayer.Play();
         _videoPlayer.isLooping = false;
         _videoPlayer.clip = _clip[0];
-        _videoPlayer.Play();
         _videoPlayer.loopPointReached += ChangeVideoPlay;
     }
     private void ChangeVideoPlay(VideoPlayer vp)
@@ -22,6 +24,14 @@ public class ChangeVideo : MonoBehaviour
     public void OnDisable()
     {
         _videoPlayer.loopPointReached -= ChangeVideoPlay;
+    }
+    public void ChangeVolume(float volume)
+    {
+        _videoPlayer.SetDirectAudioVolume(0, volume);
+    }
+    public void PlayVideo()
+    {
+        _videoPlayer.Play();
     }
 
 }

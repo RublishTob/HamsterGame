@@ -2,28 +2,31 @@
 public class ResultPanelPresenter : IPanel
 {
     private ResultPanelView _view;
-    private SuccessSystem _successSystem;
     private LocalizationSystem _localization;
+    private ResultBackgroundContent _backgroundContent;
+    private GameStateMachine _gameStateMachine;
 
     private string Loose = "Loose";
     private string Win = "Win";
-    private string Score = "Score";
-    private string Load = "LoadGame";
-    private string StartNew = "StartNew";
-    private string Exit = "ExitGame";
+
+    private string[] Strings = { "Score", "LoadGame", "StartNew", "ExitGame" };
 
     private bool IsSuccess;
-    public string Id => "ResultPanel";
+    public string Id { get; private set; }
 
-    public ResultPanelPresenter(ResultPanelView view, SuccessSystem successSystem, LocalizationSystem localization)
+    public ResultPanelPresenter(ResultPanelView view, LocalizationSystem localization, ResultBackgroundContent backgroundContent, GameStateMachine gameStateMachine, bool success, string id)
     {
+        IsSuccess = success;
+        Id = id;
         _view = view;
-        _successSystem = successSystem;
         _localization = localization;
+        _backgroundContent = backgroundContent;
+        _gameStateMachine = gameStateMachine;
     }
 
     public void Hide()
     {
+        _view.Back.onClick.RemoveListener(OnBack);
         _view.gameObject.SetActive(false);
     }
     public void Show(string nameOfPanel)
@@ -34,12 +37,24 @@ public class ResultPanelPresenter : IPanel
         }
         if(IsSuccess)
         {
-
+            _view.SetResultText(_localization.GetString(Win));
+            _view.SetBackground(_backgroundContent.SuccessBackground);
         }
         else
         {
-
+            _view.SetResultText(_localization.GetString(Loose));
+            _view.SetBackground(_backgroundContent.LooseBackground);
         }
+        for(int i = 0; i < _view.Textes.Count; i++)
+        {
+            string text = _localization.GetString(Strings[i]);
+            _view.Textes[i].text = text;
+        }
+        _view.Back.onClick.AddListener(OnBack);
         _view.gameObject.SetActive(true);
+    }
+    private void OnBack()
+    {
+        _gameStateMachine.SwichState<Menu>();
     }
 }

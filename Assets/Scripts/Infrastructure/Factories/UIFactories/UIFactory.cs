@@ -21,7 +21,7 @@ public class UIFactory : MonoBehaviour
     private DiContainer _container;
 
     [Inject]
-    private void Construct(IAssetProvider assetProvider, DiContainer container)
+    public void Construct(IAssetProvider assetProvider, DiContainer container)
     {
         _assetProvider = assetProvider;
         _container = container;
