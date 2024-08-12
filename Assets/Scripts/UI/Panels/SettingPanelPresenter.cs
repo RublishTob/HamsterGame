@@ -4,7 +4,7 @@ using UniRx;
 
 public class SettingPanelPresenter : IPanel
 {
-    private readonly string[] _keyLabels = { "Settings", "Volume", "Sensetiviti", "Language" };
+    private readonly string[] _keyLabels = { "Settings", "Volume", "Sensetiviti", "Language", "Resolution" };
     private readonly string[] _keyLangueges = { "Ru", "Eng","Fr","Ch" };
 
     private SettingPanelView _view;
@@ -39,19 +39,11 @@ public class SettingPanelPresenter : IPanel
         _mouseSystem = mouseSystem;
         _videoSystem = videoSystem;
 
-        //_router.PanelEnable += Show;
-        //_router.MenuEnable += Hide;
         _buttonLangPresenters = new List<BtnLangPresenter>();
-        _localization.TranslateText += OnLocalizePenelTextes;
         CreateButtonLanguage();
         OnLocalizePenelTextes();
         _view.Volume.onValueChanged.AddListener(delegate { ChangeVolumeSound(); }) ;
         _view.Resolution.onValueChanged.AddListener(delegate { ChangeResolution(); });
-    }
-    ~SettingPanelPresenter()
-    {
-        _router.PanelEnable -= Show;
-        _router.MenuEnable -= Hide;
     }
     public string Id { get => "SettingsPanel"; }
     public void Show(string panel)
@@ -69,7 +61,6 @@ public class SettingPanelPresenter : IPanel
     public void Hide()
     {
         _view.OnValueSaved -= OnClick;
-        _localization.TranslateText -= OnLocalizePenelTextes;
         _view.gameObject.SetActive(false);
         _compositeDisposable.Dispose();
     }
@@ -80,6 +71,7 @@ public class SettingPanelPresenter : IPanel
     }
     private void OnClick()
     {
+        _soundSystem.Click();
         _router.OpenMenu("SettingsPanel");
         SaveValue();
     }
@@ -114,5 +106,9 @@ public class SettingPanelPresenter : IPanel
     private void ChangeResolution()
     {
         _videoSystem.ChangeResolution(_view.Resolution.value);
+    }
+
+    public void DisposeResourse()
+    {
     }
 }

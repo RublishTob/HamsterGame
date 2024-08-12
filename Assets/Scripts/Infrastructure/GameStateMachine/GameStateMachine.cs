@@ -9,6 +9,8 @@ public class GameStateMachine : MonoBehaviour
     private GameStateFactory _gameStateFactory;
     private Dictionary<Type, GameState> _states;
 
+    public GameState CurrentState { get { return _currentState; } }
+
     [Inject]
     public void Construct(GameStateFactory factory)
     {
@@ -18,7 +20,8 @@ public class GameStateMachine : MonoBehaviour
             [typeof(InitializeGame)] = _gameStateFactory.Create<InitializeGame>(),
             [typeof(Menu)] = _gameStateFactory.Create<Menu>(),
             [typeof(LoadLevelState)] = _gameStateFactory.Create<LoadLevelState>(),
-            [typeof(GameLoopState)] = _gameStateFactory.Create<GameLoopState>()
+            [typeof(GameLoopState)] = _gameStateFactory.Create<GameLoopState>(),
+            [typeof(ShopState)] = _gameStateFactory.Create<ShopState>()
         };
         StartState<InitializeGame>();
     }

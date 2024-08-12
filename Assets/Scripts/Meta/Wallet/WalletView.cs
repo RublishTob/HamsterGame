@@ -15,13 +15,15 @@ public class WalletView : MonoBehaviour
 
         UpdateValue(_wallet.Wallet.GetCurrentCois);
 
+    }
+    private void OnEnable()
+    {
         _wallet.Wallet.CoinsChanged += UpdateValue;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _wallet.Wallet.CoinsChanged -= UpdateValue;
     }
-
     private void UpdateValue(int value) => _value.text = value.ToString();
 }

@@ -8,6 +8,7 @@ public class MouseSystem
     {
         _data = data;
         _provider = provider;
+        MouseSense.Value = _data.Settings.MouseSense;
     }
     public ReactiveProperty<float> MouseSense = new ReactiveProperty<float>();
     public ReactiveProperty<bool> IsMouseVisible = new ReactiveProperty<bool>();

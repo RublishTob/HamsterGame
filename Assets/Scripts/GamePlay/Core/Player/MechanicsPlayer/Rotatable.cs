@@ -1,9 +1,11 @@
 using UnityEngine;
+using Zenject;
 
 [RequireComponent (typeof(Movable))]
 public class Rotatable : MonoBehaviour, IRotatable
 {
     private Movable _movable;
+    private InputHandler _input;
     private float _desiredRotation = 0f;
     private float _rotationSpeed = 10f;
     private Quaternion _currentRotation;
@@ -17,7 +19,9 @@ public class Rotatable : MonoBehaviour, IRotatable
     private void Update()
     {
         CalculateCurrentRotation();
-        Rotate(_targetRotation, _rotationSpeed);
+
+        if (_movable.RotatedMovement.magnitude > 0)
+            Rotate(_targetRotation, _rotationSpeed);
     }
 
     public void Rotate(Quaternion target,float speed)

@@ -7,62 +7,106 @@ public class MenuLayout : MonoBehaviour
     [SerializeField] private ButtonView buttonView;
     private UIRouter _router;
     private UIFactory _buttonFactory;
+    private DisposeManager _disposeManager;
+    private GameStateMachine _gameStateMachine;
     private UIPresenterFactory _presenterFactory;
 
-    private List<NavigateButtonPresenter> _buttons;
+    private List<ButtonPresenter> _buttons;
     private List<string> KeyPanels;
 
     [Inject]
-    public void Construct(UIRouter router, UIFactory buttonFactory, UIPresenterFactory presenterFactory)
+    public void Construct(UIRouter router, UIFactory buttonFactory, UIPresenterFactory presenterFactory, GameStateMachine gameStateMachine, DisposeManager disposeManager)
     {
-        _buttons = new List<NavigateButtonPresenter>();
+        _buttons = new List<ButtonPresenter>();
         _router = router;
         _buttonFactory = buttonFactory;
+        _disposeManager = disposeManager;
         _presenterFactory = presenterFactory;
+        _gameStateMachine = gameStateMachine;
 
-        CreateButtons();
+        CreateALLButtons();
         _router.MenuEnable += ShowMenu;
         _router.PanelEnable += HideMenu;
         _router.AllMenuDisable += Hide;
+        _disposeManager.DisposeRes += DisposeElements;
         ShowMenu();
     }
-    private void CreateButtons()
+    private void CreateALLButtons()
+    {
+        if (_gameStateMachine.CurrentState is Menu)
+        {
+            CreateMenuButtons();
+        }
+        if (_gameStateMachine.CurrentState is GameLoopState)
+        {
+            CreateGameButtons();
+        }
+    }
+    private void CreateMenuButtons()
     {
         buttonView = Instantiate(buttonView, transform);
-        NavigateButtonPresenter newGameButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "NewGame");
+        ButtonPresenter newGameButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "NewGame");
         newGameButtonPresenter.Show();
         _buttons.Add(newGameButtonPresenter);
 
         buttonView = Instantiate(buttonView, transform);
-        NavigateButtonPresenter loadButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "Settings");
+        ButtonPresenter loadButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "Settings");
         loadButtonPresenter.Show();
         _buttons.Add(loadButtonPresenter);
 
         buttonView = Instantiate(buttonView, transform);
-        NavigateButtonPresenter settingsButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "LoadGame");
+        ButtonPresenter settingsButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "LoadGame");
         settingsButtonPresenter.Show();
         _buttons.Add(settingsButtonPresenter);
 
         buttonView = Instantiate(buttonView, transform);
-        NavigateButtonPresenter exitPresenter = _presenterFactory.CreateButtonContoller(buttonView, "ExitGame");
+        ButtonPresenter shopPresenter = _presenterFactory.CreateButtonContoller(buttonView, "Shop");
+        shopPresenter.Show();
+        _buttons.Add(shopPresenter);
+
+        buttonView = Instantiate(buttonView, transform);
+        ButtonPresenter exitPresenter = _presenterFactory.CreateButtonContoller(buttonView, "Exit");
+        exitPresenter.Show();
+        _buttons.Add(exitPresenter);
+    }
+    private void CreateGameButtons()
+    {
+        buttonView = Instantiate(buttonView, transform);
+        ButtonPresenter loadButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "Settings");
+        loadButtonPresenter.Show();
+        _buttons.Add(loadButtonPresenter);
+
+        buttonView = Instantiate(buttonView, transform);
+        ButtonPresenter newGameButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "SaveGame");
+        newGameButtonPresenter.Show();
+        _buttons.Add(newGameButtonPresenter);
+
+        buttonView = Instantiate(buttonView, transform);
+        ButtonPresenter settingsButtonPresenter = _presenterFactory.CreateButtonContoller(buttonView, "LoadGame");
+        settingsButtonPresenter.Show();
+        _buttons.Add(settingsButtonPresenter);
+
+        buttonView = Instantiate(buttonView, transform);
+        ButtonPresenter exitPresenter = _presenterFactory.CreateButtonContoller(buttonView, "ToMenu");
         exitPresenter.Show();
         _buttons.Add(exitPresenter);
     }
     private void OnDestroy()
     {
-        if(_buttons.Count > 0)
-        {
-            _buttons.Clear();
-        }
         _router.MenuEnable -= ShowMenu;
         _router.PanelEnable -= HideMenu;
         _router.AllMenuDisable -= Hide;
+        if (_buttons.Count > 0)
+        {
+            _buttons.Clear();
+        }
     }
-    public void UnSubscribe()
+    public void DisposeElements()
     {
         _router.MenuEnable -= ShowMenu;
         _router.PanelEnable -= HideMenu;
         _router.AllMenuDisable -= Hide;
+        _disposeManager.DisposeRes -= DisposeElements;
     }
     private void ShowMenu()
     {

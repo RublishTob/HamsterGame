@@ -7,7 +7,7 @@ public class TutorialText : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
     private LocalizationSystem _localization;
-
+    private Sequence sequence;
     [Inject]
     public void Construct(LocalizationSystem localization)
     {
@@ -21,7 +21,7 @@ public class TutorialText : MonoBehaviour
             return;
         }
         gameObject.SetActive(true);
-        DOTween.Sequence()
+        sequence = DOTween.Sequence()
             .Append(transform.DOScale(1f, 1.0f))
             .Append(transform.DOScale(0.8f, 0.5f));
 
@@ -30,5 +30,9 @@ public class TutorialText : MonoBehaviour
     public void Hide()
     {
         gameObject.SetActive(false);
+    }
+    public void OnDestroy()
+    {
+        sequence.Kill();
     }
 }

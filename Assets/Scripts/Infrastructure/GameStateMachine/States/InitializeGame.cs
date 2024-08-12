@@ -8,8 +8,9 @@ public class InitializeGame : GameState
     private LocalizationSystem _localization;
     private VideoSystem _videoSystem;
     private ConfigData _conf;
+    private MouseVisible _mouse;
     private SaveLoadSystem _saveLoadSystem;
-    public InitializeGame(GameStateMachine stateMachine, DataLocalProvider provider,InputPlayer input, LocalizationSystem localization, IPersistentData data, VideoSystem videoSystem, ConfigData conf, SaveLoadSystem saveLoadSystem) : base(stateMachine)
+    public InitializeGame(GameStateMachine stateMachine, DataLocalProvider provider,InputPlayer input, LocalizationSystem localization, IPersistentData data, VideoSystem videoSystem, ConfigData conf, SaveLoadSystem saveLoadSystem, MouseVisible mouse) : base(stateMachine)
     {
         _localization = localization;
         _dataProvider = provider;
@@ -18,6 +19,7 @@ public class InitializeGame : GameState
         _videoSystem = videoSystem;
         _conf = conf;
         _saveLoadSystem = saveLoadSystem;
+        _mouse = mouse;
     }
     public void LoadDataOrCreate()
     {
@@ -50,6 +52,7 @@ public class InitializeGame : GameState
     }
     public override void Start()
     {
+        _mouse.SetVisible(true);
         LoadDataOrCreate();
         _input.Enable();
     }

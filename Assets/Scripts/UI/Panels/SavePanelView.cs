@@ -5,21 +5,18 @@ using UnityEngine;
 
 public class SavePanelView : MonoBehaviour
 {
+    public event Action<string> OnSaveWasChoosen;
+
     [SerializeField] private Transform _transform;
     [SerializeField] private GameObject _prefab;
 
-    public event Action<string> OnSaveWasChoosen;
-    [field: SerializeField] public BackToMenu ButtonBack { get; }
-    [field: SerializeField] public ButtonView ButtonSave { get; }
-    [field: SerializeField] public TMP_InputField NameSave { get; }
+    [SerializeField] public BackToMenu ButtonBack;
+    [SerializeField] public ButtonView ButtonSave;
+    [SerializeField] public TMP_InputField NameSave;
 
-    private List<SaveButtonView> _buttons;
-
-    private void Start()
-    {
-        _buttons = new List<SaveButtonView>();
-    }
-    public void Hide()
+    public List<GameObject> _buttons;
+    public List<TextView> AllTextes;
+    private void OnDestroy()
     {
         foreach (var button in _buttons)
         {
@@ -29,9 +26,8 @@ public class SavePanelView : MonoBehaviour
     }
     public void CreateSave(string name)
     { 
-        var save = Instantiate(_prefab,_transform).GetComponent<SaveButtonView>();
-        save.SetId(name);
-        save.Click += OnSaveWasChoosen;
+        var save = Instantiate(_prefab,_transform);
+        save.GetComponent<SaveButtonView>().SetId(name);
         _buttons.Add(save);
     }
 }

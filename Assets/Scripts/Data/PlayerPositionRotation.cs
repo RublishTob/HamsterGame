@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class PlayerPositionRotation
 {
-    private float x { get; }
-    private float y { get; }
-    private float z { get; }
-    private float x_rot { get; }
-    private float y_rot { get; }
-    private float z_rot { get; }
-    private float w_rot { get; }
+    private float x { get; set; }
+    private float y { get; set; }
+    private float z { get; set; }
+    private float x_rot { get; set; }
+    private float y_rot { get; set; }
+    private float z_rot { get; set; }
+    private float w_rot { get; set; }
 
     public PlayerPositionRotation(Vector3 position, Quaternion rotation)
     {

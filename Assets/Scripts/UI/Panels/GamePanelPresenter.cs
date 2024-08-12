@@ -1,22 +1,24 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
-public class GamePanelPresenter : IPanel, IDisposable
+public class GamePanelPresenter : IPanel
 {
     public event Action LoadLevel;
 
     [SerializeField] private Button _button;
     [SerializeField] private LoadBarShower _loadBar;
+
+    private readonly string[] _keyLabels = { "New_Level", "Play" };
+
     private PersistentData _data;
     private UIRouter _router;
     private IConfigData _config;
-
+    private SoundSystem _soundSystem;
     private SceneLoader _sceneLoader;
     private SceneUnlocker _unlockerScene;
+    private LocalizationSystem _localization;
     private List<LevelPresenter> _levels;
     private LevelSave _save;
     private SaveLoadSystem _repository;
@@ -25,7 +27,7 @@ public class GamePanelPresenter : IPanel, IDisposable
     private List<LevelViewConfig> _viewConfigs;
 
     private GamePanelView _view;
-    public GamePanelPresenter(GamePanelView view, SceneUnlocker unlockerScene, SaveLoadSystem repository, SceneLoader loader, PersistentData data, UIRouter router, IConfigData config, LevelLoaderSystem loaderSystem, GameStateMachine gameStateMachine)
+    public GamePanelPresenter(GamePanelView view, SceneUnlocker unlockerScene, SaveLoadSystem repository, SceneLoader loader, PersistentData data, UIRouter router, IConfigData config, LevelLoaderSystem loaderSystem, GameStateMachine gameStateMachine, LocalizationSystem localization, SoundSystem soundSystem)
     {
         _view = view;
         _router = router;
@@ -33,11 +35,11 @@ public class GamePanelPresenter : IPanel, IDisposable
         _sceneLoader = loader;
         _data = data;
         _config = config;
+        _localization = localization;
 
+        _localization.TranslateText += Localization;
         _repository = repository;
-        //_router.PanelEnable += Show;
-        //_router.MenuEnable += Hide;
-
+        Localization();
         _loaderSystem = loaderSystem;
         _gameStateMachine = gameStateMachine;
         _viewConfigs = new List<LevelViewConfig>();
@@ -45,16 +47,13 @@ public class GamePanelPresenter : IPanel, IDisposable
         {
             _viewConfigs.Add(i);
         }
-    }
-    ~GamePanelPresenter()
-    {
-        _router.PanelEnable -= Show;
-        _router.MenuEnable -= Hide;
+        _soundSystem = soundSystem;
     }
     public string Id { get => "NewGamePanel"; }
     public int CurrentLevel { get; private set; }
     private void OnBack()
     {
+        _soundSystem.Click();
         _router.OpenMenu("LoadGamePanel");
     }
     public void Show(string panel)
@@ -79,21 +78,34 @@ public class GamePanelPresenter : IPanel, IDisposable
         _view.ButtonBack.OnBack -= OnBack;
         _view.gameObject.SetActive(false);
     }
-
+    public void Localization()
+    {
+        for (int i = 0; i < _view.AllTextes.Count; i++)
+        {
+            _view.AllTextes[i].SetText(_localization.GetString(_keyLabels[i]));
+        }
+    }
     public void Chooselevel(int level)
     {
+        _soundSystem.Click();
         CurrentLevel = level;
         Debug.Log(CurrentLevel);
     }
 
     public void Load()
     {
+        _soundSystem.Click();
+
+        if(CurrentLevel==0)
+        {
+            return;
+        }
+
         _loaderSystem.ChangeCurrentScene(CurrentLevel);
-        _gameStateMachine.SwichState<LoadLevelState>();
+        _loaderSystem.LoadingScene();
     }
-    public void Dispose()
+    public void DisposeResourse()
     {
-        _router.PanelEnable -= Show;
-        _router.MenuEnable -= Hide;
+        _localization.TranslateText -= Localization;
     }
 }

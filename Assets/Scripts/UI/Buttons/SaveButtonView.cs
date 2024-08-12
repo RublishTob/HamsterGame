@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class SaveButtonView : MonoBehaviour
 {
     public event Action <string> Click;
-    private TMP_Text _text;
-    private Button _button;
+    [SerializeField] private TMP_Text _text;
+    [SerializeField] private Button _button;
 
-    private void Start()
+    private void OnEnable()
     {
         _button.onClick.AddListener(SaveWasChoosen);
     }

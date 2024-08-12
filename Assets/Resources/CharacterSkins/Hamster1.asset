@@ -15,6 +15,4 @@ MonoBehaviour:
   <Model>k__BackingField: {fileID: 142242924939517107, guid: d4e1d21bc69320e469562757b4c1c99d, type: 3}
   <ContentImage>k__BackingField: {fileID: 21300000, guid: 5f0131547361f2c44a278691f9f9a1ce, type: 3}
   <Price>k__BackingField: 1000
-  <HighlightBackground>k__BackingField: {fileID: 21300000, guid: dff53d730a07fb2419310367f4660f29, type: 3}
-  <StandartBackgroundImage>k__BackingField: {fileID: 21300000, guid: 01dfc1e9ce428ac4ab4efea2725b34f6, type: 3}
-  <SkinType>k__BackingField: 1
+  <SkinType>k__BackingField: 0

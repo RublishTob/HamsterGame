@@ -10,6 +10,7 @@ public class PanelLayout : MonoBehaviour
     private UIRouter _router;
     private UIFactory _panelFactory;
     private UIPresenterFactory _presenterFactory;
+    private GameStateMachine _gameStateMachine;
 
     private SettingPanelPresenter settingsGamePanelPresenter;
     private LoadPanelPresenter _loadPanelPresenter;
@@ -22,17 +23,21 @@ public class PanelLayout : MonoBehaviour
     private GamePanelView _gamePanelView;
     private LoadPanelView _loadPanelView;
     private ResultPanelView _resultPanelView;
+    private SavePanelView _savePanelView;
+    private DisposeManager _disposeManager;
 
     private List<IPanel> _panels;
 
     [Inject]
-    public void Construct(UIRouter router, UIFactory panelFactory, UIPresenterFactory presenterFactory)
+    public void Construct(UIRouter router, UIFactory panelFactory, UIPresenterFactory presenterFactory, GameStateMachine gameStateMachine, DisposeManager disposeManager)
     {
         _panels = new List<IPanel>();
 
         _router = router;
         _panelFactory = panelFactory;
         _presenterFactory = presenterFactory;
+        _gameStateMachine = gameStateMachine;
+        _disposeManager = disposeManager;
 
         _router.MenuEnable += HideAllPanel;
         _router.PanelEnable += ShowPanel;
@@ -40,15 +45,27 @@ public class PanelLayout : MonoBehaviour
 
         _router.WinMenu += ShowWinPanel;
         _router.LooseMenu += ShowLoosePanel;
+        _disposeManager.DisposeRes += DisposePanel;
 
-        CreatePanels();
-        CreateLoosePanel();
-        CreateWinPanel();
+        CreateALLPanels();
 
         HideAllPanel();
     }
 
-    private void CreatePanels()
+    private void CreateALLPanels()
+    {
+        if (_gameStateMachine.CurrentState is Menu)
+        {
+            CreateMenuPanels();
+        }
+        if (_gameStateMachine.CurrentState is GameLoopState)
+        {
+            CreateGamePanels();
+            CreateLoosePanel();
+            CreateWinPanel();
+        }
+    }
+    private void CreateMenuPanels()
     {
         var settingPanelView = Resources.Load("Prefabs/SettingsPanel");
         _settingPanelView = Instantiate(settingPanelView, transform).GetComponent<SettingPanelView>();
@@ -59,6 +76,23 @@ public class PanelLayout : MonoBehaviour
         _gamePanelView = Instantiate(gamePanelView, transform).GetComponent<GamePanelView>();
         _gamePanelPresenter = _presenterFactory.CreateGamePanelContoller(_gamePanelView);
         _panels.Add(_gamePanelPresenter);
+
+        var loadPanelView = Resources.Load("Prefabs/LoadPanel");
+        _loadPanelView = Instantiate(loadPanelView, transform).GetComponent<LoadPanelView>();
+        _loadPanelPresenter = _presenterFactory.CreateLoadPanelContoller(_loadPanelView);
+        _panels.Add(_loadPanelPresenter);
+    }
+    private void CreateGamePanels()
+    {
+        var settingPanelView = Resources.Load("Prefabs/SettingsPanel");
+        _settingPanelView = Instantiate(settingPanelView, transform).GetComponent<SettingPanelView>();
+        settingsGamePanelPresenter = _presenterFactory.CreateSettingsPanelContoller(_settingPanelView);
+        _panels.Add(settingsGamePanelPresenter);
+
+        var savePanelView = Resources.Load("Prefabs/SavePanel");
+        _savePanelView = Instantiate(savePanelView, transform).GetComponent<SavePanelView>();
+        _saveGamePanelPresenter = _presenterFactory.CreateSavePanelContoller(_savePanelView);
+        _panels.Add(_saveGamePanelPresenter);
 
         var loadPanelView = Resources.Load("Prefabs/LoadPanel");
         _loadPanelView = Instantiate(loadPanelView, transform).GetComponent<LoadPanelView>();
@@ -102,7 +136,7 @@ public class PanelLayout : MonoBehaviour
             case "Settings":
                 ShowConcretePanel("SettingsPanel");
                 break;
-            case "Save":
+            case "SaveGame":
                 ShowConcretePanel("SavePanel");
                 break;
         }
@@ -121,6 +155,19 @@ public class PanelLayout : MonoBehaviour
                 break;
             }
         }
+    }
+    public void DisposePanel()
+    {
+        for (int i = 0; i < _panels.Count; i++)
+        {
+            _panels[i].DisposeResourse();
+        }
+        _router.MenuEnable -= HideAllPanel;
+        _router.PanelEnable -= ShowPanel;
+        _router.AllMenuDisable -= HideAllPanel;
+        _router.WinMenu -= ShowWinPanel;
+        _router.LooseMenu -= ShowLoosePanel;
+        _disposeManager.DisposeRes -= DisposePanel;
     }
     private void HideAllPanel()
     {

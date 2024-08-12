@@ -2,9 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 public class ShopPanel : MonoBehaviour
 {
+    private const string ID_BUTTON_CHARACTERS = "Characters";
+    private const string ID_BUTTON_HOUSES = "Houses";
+    private const string ID_BUTTON_SELECTED = "Selected";
+
     public event Action<ShopItemPresenter> OnViewClick;
 
     [SerializeField] private ShopCategoryButton _characterSkinButton;
@@ -14,20 +19,24 @@ public class ShopPanel : MonoBehaviour
     private List<ShopItemPresenter> _shopItems;
 
     private ShopItemPresenter _previewItem;
-
+    private LocalizationSystem _localization;
     private ShopContent _contentItems;
     private ItemViewFactory _factoryView;
     private ItemPresenterFactory _factoryPresenter;
 
-    public void Construct(ShopContent contentItems, ItemViewFactory factoryView, ItemPresenterFactory factoryPresenter)
+    [Inject]
+    public void Construct(ShopContent contentItems, ItemViewFactory factoryView, ItemPresenterFactory factoryPresenter, LocalizationSystem localization)
     {
         _factoryView = factoryView;
         _factoryPresenter = factoryPresenter;
         _contentItems = contentItems;
+        _localization = localization;
         _shopItems = new();
 
         _characterSkinButton.Click += OnCharacterSkinsButtonClick;
         _houseSkinButton.Click += OnHouseSkinsButtonClick;
+        _houseSkinButton.SetText(_localization.GetString(ID_BUTTON_HOUSES));
+        _characterSkinButton.SetText(_localization.GetString(ID_BUTTON_CHARACTERS));
 
         OnHouseSkinsButtonClick();
     }
@@ -79,6 +88,7 @@ public class ShopPanel : MonoBehaviour
         foreach(ShopItem item in items)
         {
             ShopItemView spawnedItem = Instantiate(_factoryView.Get(item), _itemParents);
+            spawnedItem.SetText(_localization.GetString(ID_BUTTON_SELECTED));
             ShopItemPresenter presenter = _factoryPresenter.Get(item, spawnedItem);
             presenter.Click += PrewiedItem;
             presenter.UnSelected();

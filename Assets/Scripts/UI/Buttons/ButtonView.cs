@@ -12,11 +12,15 @@ public class ButtonView : MonoBehaviour
 
     private void OnEnable()
     {
-        _button.onClick.AddListener(() => OnClick?.Invoke());
+        _button.onClick.AddListener(ClickButton);
     }
     private void OnDisable()
     {
-        _button.onClick.RemoveListener(() => OnClick?.Invoke());
+        _button.onClick.RemoveListener(ClickButton);
+    }
+    private void ClickButton()
+    {
+        OnClick?.Invoke();
     }
     public void SetTitle(string text)
     {

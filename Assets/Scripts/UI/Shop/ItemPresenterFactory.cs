@@ -6,9 +6,9 @@ public class ItemPresenterFactory
     private SkinSelector _skinSelector;
     private SkinUnlocker _skinUnlocker;
     private IDataProvider _dataProvider;
-    private Wallet _wallet;
+    private WalletRepository _wallet;
 
-    public ItemPresenterFactory(OpenSkinChecker openSkinChecker, SelectedSkinChecker selectedSkin, SkinSelector skinSelector, SkinUnlocker skinUnlocker, IDataProvider dataProvider, Wallet wallet)
+    public ItemPresenterFactory(OpenSkinChecker openSkinChecker, SelectedSkinChecker selectedSkin, SkinSelector skinSelector, SkinUnlocker skinUnlocker, IDataProvider dataProvider, WalletRepository wallet)
     {
         _openSkinChecker = openSkinChecker;
         _selectedSkinChecker = selectedSkin;

@@ -1,16 +1,25 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class ShopView : MonoBehaviour
 {
+    private const string ID_BUTTON_SELECT = "Select";
+    private const string ID_BUTTON_SELECTED = "Selected";
+
     [SerializeField] public Button _selectionButton;
     [SerializeField] public BuyButton _buyButton;
     [SerializeField] private Image _selectedImage;
     [SerializeField] private SkinPlacement _placement;
 
+    [SerializeField] private TMP_Text selectText;
+    [SerializeField] private TMP_Text selectedText;
+
     private ShopPanel _shopPanel;
     private ShopItemPresenter _previewItem;
+    private LocalizationSystem _localization;
 
     private void OnDisable()
     {
@@ -18,9 +27,13 @@ public class ShopView : MonoBehaviour
         _selectionButton.onClick.RemoveListener(OnSelectedButtonClick);
         _shopPanel.OnViewClick -= ShowItem;
     }
-    public void Construct(ShopPanel shopPanel)
+    [Inject]
+    public void Construct(ShopPanel shopPanel, LocalizationSystem localization)
     {
         _shopPanel = shopPanel;
+        _localization = localization;
+        selectedText.text = _localization.GetString(ID_BUTTON_SELECTED);
+        selectText.text = _localization.GetString(ID_BUTTON_SELECT);
         _shopPanel.OnViewClick += ShowItem;
         _buyButton.Click += OnBuyButtonClick;
         _selectionButton.onClick.AddListener(OnSelectedButtonClick);
@@ -70,9 +83,9 @@ public class ShopView : MonoBehaviour
     private void OnBuyButtonClick()
     {
         _shopPanel.Buy(_previewItem);
-        ShowSelectedImage();
+        ShowSelectionButton();
         HideBuyButton();
-        HideSelectionButton();
+        //HideSelectionButton();
     }
     private void OnSelectedButtonClick()
     {

@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366228954432763055}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.3, y: 0.34, z: 7.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &366228953803568248
 MonoBehaviour:
@@ -57,6 +57,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1d99b2ef8ed4b4b8a06233cd2ecc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1985575989079196773, guid: bdd8f7e193d349442a64b51f95e38e57, type: 3}
-  factory: {fileID: 366228953803568248}
-  spawnTransform: {fileID: 366228953803568251}
+  _hamster1: {fileID: 142242924939517107, guid: 5be87fff8ef42a3429cc7503c0df39ef, type: 3}
+  _hamster2: {fileID: 4820982143082799188, guid: 37e70a450f6b0c44caa1e6b91328286f, type: 3}
+  _hamster3: {fileID: 7861344047193839193, guid: a7441056ba1c451478af566bb0c7f00c, type: 3}
+  _hamster4: {fileID: 4161719295364927576, guid: 9013e5436c69a71469aa4615be9d76ef, type: 3}
+  _prefab: {fileID: 0}
+  _factory: {fileID: 366228953803568248}
+  _spawnTransform: {fileID: 0}

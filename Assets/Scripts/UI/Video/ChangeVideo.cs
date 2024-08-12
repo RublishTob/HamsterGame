@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Video;
+using Zenject;
 
 public class ChangeVideo : MonoBehaviour
 {
     [SerializeField] private VideoPlayer _videoPlayer;
 
     [SerializeField] private VideoClip[] _clip;
-    void Start()
+
+    [Inject]
+    public void Construct()
     {
         _videoPlayer = GetComponent<VideoPlayer>();
         _videoPlayer.targetCamera = Camera.main;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4425440344009732591}
   - component: {fileID: 4425440344009732590}
   - component: {fileID: 8647433954669316599}
-  - component: {fileID: 1168014623943231449}
+  - component: {fileID: -8058151527714701873}
   m_Layer: 5
   m_Name: SaveView
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 01dfc1e9ce428ac4ab4efea2725b34f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1168014623943231449
+--- !u!114 &-8058151527714701873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +132,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4425440344009732588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ee48be4bb878b4b938fae09cd645f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7405b60cba7fb0347adf6475d5052239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 8647433954669316599}
   _text: {fileID: 4425440344330775696}
+  _button: {fileID: 8647433954669316599}
 --- !u!1 &4425440344330775702
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d703c19d2bc2a36409bd5dda40ce8733, type: 2}
+  m_sharedMaterial: {fileID: -985153647049259744, guid: d703c19d2bc2a36409bd5dda40ce8733, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -230,13 +230,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.9
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535

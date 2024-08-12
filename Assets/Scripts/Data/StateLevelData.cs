@@ -1,15 +1,19 @@
 using System.Collections.Generic;
-using UniRx;
 
 public class StateLevelData
 {
     public List<int> CoinToken = new List<int>();
-    public List<int> CoinNotToken = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+    public List<int> CoinNotToken = new List<int>();
 
-    public ReactiveCollection<int> EnemyKilledId;
-    public PlayerPositionRotation PositionPlayer { get; set; }
-
-    public IntReactiveProperty DifficultyOfLevel = new();
-
-    public IntReactiveProperty CoinTaked = new();
+    public float? CameraRot_X {  get; set; }
+    public float? CameraRot_Y { get; set; }
+    public bool IsTimerRun { get; set; }
+    public float Count { get; set; }
+    public float? x { get; set; }
+    public float? y { get; set; }
+    public float? z { get; set; }
+    public float? x_rot { get; set; }
+    public float? y_rot { get; set; }
+    public float? z_rot { get; set; }
+    public float? w_rot { get; set; }
 }

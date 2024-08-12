@@ -25,8 +25,8 @@ public class CoinController
     }
     public void Hide()
     {
-        _coin.gameObject.SetActive(false);
         _coin.CoinToken -= AddCoin;
+        _coin.gameObject.SetActive(false);
     }
 
     public void AddCoin()

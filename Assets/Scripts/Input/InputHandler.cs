@@ -8,6 +8,9 @@ public class InputHandler: MonoBehaviour
     private InputPlayer _playerInput;
     private GlobalEventState _eventState;
     private Vector2 _vectorOfInput;
+
+    public Vector2 VectorOfInput => _vectorOfInput;
+
     private Vector3 _vectorOfMove;
     private bool _isStartedGame;
     public Vector3 MouseLook { get; private set; }

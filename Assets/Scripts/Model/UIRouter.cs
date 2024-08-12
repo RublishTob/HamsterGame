@@ -8,14 +8,23 @@ public class UIRouter
     public event Action AllMenuDisable;
     public event Action LooseMenu;
     public event Action WinMenu;
+    public event Action MainMenuEnable;
+    private DisposeManager _disposeManager;
 
     private List<string> KeyPanels;
     private List<string> KeyMenus;
 
-    public UIRouter() 
+    public UIRouter(DisposeManager disposeManager) 
     {
-        KeyMenus = new List<string>() { "NewGame","LoadGame","Settings","BackMenu", "SaveLevel" };
+        _disposeManager = disposeManager;
+        _disposeManager.DisposeRes += DisposeSubscribers;
+        KeyMenus = new List<string>() { "NewGame","LoadGame","Settings","BackMenu", "SaveGame" };
         KeyPanels = new List<string>() { "NewGamePanel", "LoadGamePanel", "SettingsPanel", "SavePanel" };
+    }
+    private void DisposeSubscribers()
+    {
+        MainMenuEnable = null;
+        _disposeManager.DisposeRes -= DisposeSubscribers;
     }
     public void HideAll()
     {
@@ -34,6 +43,10 @@ public class UIRouter
         {
             MenuEnable?.Invoke();
         }
+    }
+    public void OpenMainMenu()
+    {
+        MainMenuEnable?.Invoke();
     }
     public void OpenLooseMenu()
     {

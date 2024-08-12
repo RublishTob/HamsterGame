@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4625406398371755337}
   - component: {fileID: 4474158200911466621}
+  - component: {fileID: 8829129057815373207}
   m_Layer: 0
   m_Name: House2
   m_TagString: Untagged
@@ -51,6 +52,19 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!65 &8829129057815373207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8087823359163429322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.15767, y: 2.781829, z: 1.9410214}
+  m_Center: {x: 0.32911226, y: 1.4182507, z: 0.0047933524}
 --- !u!1001 &7933903510084162368
 PrefabInstance:
   m_ObjectHideFlags: 0

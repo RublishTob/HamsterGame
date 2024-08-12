@@ -7,11 +7,11 @@ public class ResultPanelView : MonoBehaviour
 {
     [SerializeField] private Image _background;
     [SerializeField] private TMP_Text _resultText;
+
     [SerializeField] private TMP_Text _count;
 
     [SerializeField] public Button Back;
-    [SerializeField] private Button _load;
-    [SerializeField] private Button _newGame;
+    [SerializeField] public Button NewGame;
 
     [SerializeField] public List<TMP_Text> Textes;
 

@@ -1,38 +1,17 @@
 
-public class NavigateButtonPresenter
+public class NavigateButtonPresenter : ButtonPresenter
 {
-    private string _text;
-    private ButtonView _view;
     private UIRouter _router;
-    private LocalizationSystem _localization;
-    public NavigateButtonPresenter(ButtonView view, UIRouter router, LocalizationSystem localization, string id)
+    private SoundSystem _soundSystem;
+    public NavigateButtonPresenter(ButtonView view, SoundSystem soundSystem, UIRouter router, LocalizationSystem localization, string id) : base(view, localization, id)
     {
-        Id = id;
-        _view = view;
         _router = router;
-        _localization = localization;
-        _localization.TranslateText += Localize;
-        Localize();
+        _soundSystem = soundSystem;
     }
-    public string Id { get; private set; }
-    public void Show()
+    public override void Click()
     {
-        _view.OnClick += Click;
-        _view.gameObject.SetActive(true);
-    }
-    public void Hide()
-    {
-        _view.OnClick -= Click;
-        _view.gameObject.SetActive(false);
-        _localization.TranslateText -= Localize;
-    }
-    public void Localize()
-    {
-        _text = _localization.GetString(Id);
-        _view.SetTitle(_text);
-    }
-    private void Click()
-    {
+        _soundSystem.Click();
         _router.OpenPanel(Id);
     }
+
 }

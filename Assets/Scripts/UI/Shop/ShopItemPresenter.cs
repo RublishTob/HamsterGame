@@ -13,8 +13,8 @@ public class ShopItemPresenter
     private SkinSelector _skinSelector;
     private SkinUnlocker _skinUnlocker;
     private IDataProvider _dataProvider;
-    private Wallet _wallet;
-    public ShopItemPresenter(ShopItem model, ShopItemView shopItemView, OpenSkinChecker openSkinChecker, SelectedSkinChecker selectedSkin, SkinSelector skinSelector, SkinUnlocker skinUnlocker, IDataProvider dataProvider, Wallet wallet)
+    private WalletRepository _wallet;
+    public ShopItemPresenter(ShopItem model, ShopItemView shopItemView, OpenSkinChecker openSkinChecker, SelectedSkinChecker selectedSkin, SkinSelector skinSelector, SkinUnlocker skinUnlocker, IDataProvider dataProvider, WalletRepository wallet)
     {
         _shopItemModel = model;
         _shopItemView = shopItemView;
@@ -53,9 +53,10 @@ public class ShopItemPresenter
     {
         if (IsOpen)
             return;
-        if (_wallet.IsEnough(_shopItemModel.Price))
+        if (_wallet.Wallet.IsEnough(_shopItemModel.Price))
         {
-            Unlock();
+            UnSelected();
+            Update();
             BuyItem();
             _dataProvider.Save();
         }
@@ -77,7 +78,7 @@ public class ShopItemPresenter
         else
         {
             Lock();
-            if (_wallet.IsEnough(_shopItemModel.Price))
+            if (_wallet.Wallet.IsEnough(_shopItemModel.Price))
             {
                 IsCanBuy = true;
             }
@@ -110,7 +111,7 @@ public class ShopItemPresenter
     }
     private void BuyItem()
     {
-        _wallet.Spend(_shopItemModel.Price);
+        _wallet.Wallet.Spend(_shopItemModel.Price);
         Unlock();
         _skinUnlocker.Visit(_shopItemModel);
         _dataProvider.Save();

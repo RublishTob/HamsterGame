@@ -7,9 +7,9 @@ public class Wallet
 
     private PlayerSave _data;
 
-    public Wallet(PlayerSave data)
+    public Wallet(PersistentData data)
     {
-        _data = data;
+        _data = data.PlayerData;
     }
     public void AddCoins(int coins)
     {

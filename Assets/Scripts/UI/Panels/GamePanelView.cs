@@ -10,6 +10,8 @@ public class GamePanelView : MonoBehaviour
 
     public List<LevelView> Levels;
 
+    public List<TextView> AllTextes;
+
     [SerializeField] public Button ToGame;
     [SerializeField] public BackToMenu ButtonBack;
 

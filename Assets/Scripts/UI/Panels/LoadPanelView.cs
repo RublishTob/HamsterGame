@@ -12,7 +12,7 @@ public class LoadPanelView : MonoBehaviour
     [SerializeField] public GameObject Prefab;
 
     private List<GameObject> Saves = new();
-
+    public List<TextView> AllTextes;
     public void InitSaves(string levelname)
     {
         var save = Instantiate(Prefab,TransformPanel);

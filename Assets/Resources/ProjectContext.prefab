@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -1482065102048873002}
   - component: {fileID: -7623242819687290723}
   - component: {fileID: 4900793071965887612}
+  - component: {fileID: 4410860880668129611}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -31,13 +32,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987418993384049511}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1692157117386915861
 MonoBehaviour:
@@ -83,7 +84,9 @@ MonoBehaviour:
   _sceneLoader: {fileID: -3361871440109027922}
   _stateMachine: {fileID: -1482065102048873002}
   _screenLook: {fileID: -7623242819687290723}
+  _mouseVisible: {fileID: 4410860880668129611}
   _uiFactory: {fileID: -6553510566994176662}
+  _exit: {fileID: 545449982599272890, guid: 05524909bde246540904b274ccd57087, type: 3}
 --- !u!114 &-6553510566994176662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2462d041e48fef84288e1ae2b0be48ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sounds: []
+  _sounds:
+  - {fileID: 8300000, guid: 50ca712fa04c0d8478ada0131b2f992d, type: 3}
+  - {fileID: 8300000, guid: e2ef6f41fe4d3be4e87153985d776289, type: 3}
+  _audioSrc: {fileID: 4900793071965887612}
+  _audioSrc2: {fileID: 4900793071965887612}
 --- !u!114 &-1482065102048873002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +250,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4410860880668129611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987418993384049511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90db0c5470e5d9b43b0b664e20dcf553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: d41c8e21f3cbf4d47a06d5160c78d03f, type: 3}

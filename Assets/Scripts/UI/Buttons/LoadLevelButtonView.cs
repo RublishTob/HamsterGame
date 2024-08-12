@@ -15,8 +15,16 @@ public class LoadLevelButtonView : MonoBehaviour
     {
         _text.text = nameSave;
     }
+    private void OnEnable()
+    {
+        _button.onClick.AddListener(Click);
+    }
     public void Click()
     {
         OnSaveClicked?.Invoke(_text.text);
+    }
+    private void OnDisable()
+    {
+        _button.onClick.RemoveListener(Click);
     }
 }

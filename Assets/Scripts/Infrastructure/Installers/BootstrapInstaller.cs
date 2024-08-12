@@ -6,7 +6,9 @@ public class BootstrapInstaller : MonoInstaller
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private GameStateMachine _stateMachine;
     [SerializeField] private ScreenResolution _screenLook;
+    [SerializeField] private MouseVisible _mouseVisible;
     [SerializeField] private UIFactory _uiFactory;
+    [SerializeField] private ExitGame _exit;
     public override void InstallBindings()
     {
         BindData();
@@ -26,11 +28,12 @@ public class BootstrapInstaller : MonoInstaller
     }
     private void BindServices()
     {
-        Container.Bind<GameStateMachineService>().AsSingle();
+        Container.Bind<DisposeManager>().AsSingle();
         Container.Bind<Logger>().FromNew().AsSingle();
         Container.Bind<InputPlayer>().AsSingle();
-        Container.Bind<SceneLoader>().FromInstance(_sceneLoader).AsSingle();
         Container.Bind<UIRouter>().AsSingle();
+        Container.Bind<MouseVisible>().FromInstance(_mouseVisible).AsSingle();
+        Container.Bind<SceneLoader>().FromInstance(_sceneLoader).AsSingle();
         Container.BindInterfacesAndSelfTo<LocalizationSystem>().AsSingle();
         Container.Bind<SceneUnlocker>().AsSingle();
         Container.Bind<SoundSystem>().AsSingle();
@@ -40,7 +43,7 @@ public class BootstrapInstaller : MonoInstaller
         Container.Bind<RewardSystem>().AsSingle();
         Container.Bind<SuccessSystem>().AsSingle();
         Container.Bind<LevelProgressService>().AsSingle();
-
+        Container.Bind<ExitGame>().FromInstance(_exit).AsSingle();
         BindScreenResolution();
 
     }
@@ -55,6 +58,7 @@ public class BootstrapInstaller : MonoInstaller
         Container.Bind<Menu>().FromNew().AsSingle();
         Container.Bind<LoadLevelState>().FromNew().AsSingle();
         Container.Bind<GameLoopState>().FromNew().AsSingle();
+        Container.Bind<ShopState>().FromNew().AsSingle();
         Container.Bind<GameStateFactory>().FromNew().AsSingle();
     }
     private void BindScreenResolution()

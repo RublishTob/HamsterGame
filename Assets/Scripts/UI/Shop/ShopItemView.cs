@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 public class ShopItemView : MonoBehaviour, IPointerClickHandler
 {
     public event Action OnViewClicked;
+
+    [SerializeField] private TMP_Text _text;
 
     [SerializeField] private Image _selectionImage;
     [SerializeField] private Image _lockImage;
@@ -36,6 +39,10 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
     public void SetContentImage(Sprite contentImage)
     {
         _contentImage.sprite = contentImage;
+    }
+    public void SetText(string text)
+    {
+        _text.text = text;
     }
     public void SetPrice(string price)
     {

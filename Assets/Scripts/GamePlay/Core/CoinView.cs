@@ -17,7 +17,7 @@ public class CoinView : MonoBehaviour
     {
         _soundSystem.PlaySound(0);
         CoinToken?.Invoke();
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -3,11 +3,16 @@ using System;
 public class LevelLoaderSystem
 {
     private SceneLoader _loader;
-    public event Action OnLoadSceneIsDone;
+    private GameStateMachine _gameStateMachine;
+    private SaveLoadSystem _saveLoadSystem;
+    public event Action <int> OnLoadScene;
+    public event Action <string> OnLoadSceneWithSave;
     private int? _currentScene;
-    public LevelLoaderSystem(SceneLoader loader, SceneUnlocker unlockerScene)
+    public LevelLoaderSystem(SceneLoader loader, GameStateMachine gameStateMachine, SaveLoadSystem saveLoadSystem)
     {
         _loader = loader;
+        _gameStateMachine = gameStateMachine;
+        _saveLoadSystem = saveLoadSystem;
     }
     public void ChangeCurrentScene(int scene)
     {
@@ -15,14 +20,24 @@ public class LevelLoaderSystem
     }
     public void LoadingScene()
     {
-        if(_currentScene == null)
+        _gameStateMachine.SwichState<LoadLevelState>();
+        OnLoadScene?.Invoke((int)_currentScene);
+        LoadCurrentScene();
+    }
+    public void LoadSceneWithSave(string nameSave)
+    {
+        _gameStateMachine.SwichState<LoadLevelState>();
+        OnLoadSceneWithSave?.Invoke(nameSave);
+        var save = _saveLoadSystem.ReadSave(nameSave);
+        _currentScene = save.Level;
+        LoadCurrentScene();
+    }
+    private void LoadCurrentScene()
+    {
+        if (_currentScene == null)
         {
             return;
         }
         _loader.LoadScene((int)_currentScene);
-    }
-    public void LoadingSceneSave(LevelSave save)
-    {
-        _loader.LoadScene(save.Level);
     }
 }

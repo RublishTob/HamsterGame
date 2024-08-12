@@ -18,16 +18,15 @@ public class ScreenResolutionPresenter
     {
         if(resolution == 0)
         {
-            _view.SetScreenResolution(1920, 1080);
-            _logger.Log("1920");
+            _view.SetScreenResolution(1024, 768);
         }
         if(resolution == 1)
         {
-            _view.SetScreenResolution(1024, 768);
+            _view.SetScreenResolution(1920, 1080);
         }
         if (resolution == 2)
         {
-            _view.SetScreenResolution(4, 3);
+            _view.SetScreenResolution(3840, 2160);
         }
     }
 }

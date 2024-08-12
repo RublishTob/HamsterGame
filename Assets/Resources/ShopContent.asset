@@ -17,7 +17,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82c5090468c743d4082756f988b70de3, type: 2}
   - {fileID: 11400000, guid: cbae8c8ae272c36459013d768304524e, type: 2}
   - {fileID: 11400000, guid: 212f7651b673ad54d9a7fc52fb9659ed, type: 2}
-  - {fileID: 11400000, guid: 259bf92562604db48a451454b1782a75, type: 2}
   _houseSkinItems:
   - {fileID: 11400000, guid: 78ecfa63d9a9c0f4090a17ac0e79c05e, type: 2}
   - {fileID: 11400000, guid: fa9df019802ca814a99445f57e1eee69, type: 2}

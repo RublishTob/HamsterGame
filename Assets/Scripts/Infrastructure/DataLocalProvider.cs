@@ -83,18 +83,12 @@ public class DataLocalProvider : IDataProvider
     }
     public bool TryLoadConfig()
     {
-        LevelsConfig levels = (LevelsConfig)Resources.Load("Configs/LevelListConfig");
+        LoadLevelsCards();
 
-        List<LevelViewConfig> levelViews = new();
-
-        for (int i = 0; i < levels.levels.Length; i++)
-        {
-            levelViews.Add(levels.levels[i]);
-        }
-        _config.levels = levelViews;
-
-        if(_config.levels == null)
+        if (_config.levels == null)
             return false;
+
+        LoadNewLevelConfig();
 
         return true;
     }
@@ -114,5 +108,21 @@ public class DataLocalProvider : IDataProvider
 
         _persistentData.LocalizateData = localization;
         return true;
+    }
+    private void LoadLevelsCards()
+    {
+        LevelsConfig levels = (LevelsConfig)Resources.Load("Configs/LevelListConfig");
+        List<LevelViewConfig> levelViews = new();
+        for (int i = 0; i < levels.levels.Length; i++)
+        {
+            levelViews.Add(levels.levels[i]);
+        }
+        _config.levels = levelViews;
+    }
+    private void LoadNewLevelConfig()
+    {
+        fileName = "NewLevelConfig";
+        var config = JsonConvert.DeserializeObject<NewLevelConfig>(File.ReadAllText(FullPath));
+        _config.newLevelConfig = config;
     }
 }
