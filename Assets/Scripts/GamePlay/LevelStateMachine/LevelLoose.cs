@@ -6,13 +6,15 @@ public class LevelLoose : LevelState
     private MenuLayout _menuLayout;
     private PanelLayout _panelLayout;
     private MouseVisible _mouse;
-    public LevelLoose(LevelStateMachine stateMachine, UIRouter router, GlobalEventState globalEvent, MenuLayout menuLayout, PanelLayout panelLayout, MouseVisible mouse) : base(stateMachine)
+    private SoundResultGame _soundResultGame;
+    public LevelLoose(LevelStateMachine stateMachine, UIRouter router, GlobalEventState globalEvent, MenuLayout menuLayout, PanelLayout panelLayout, MouseVisible mouse, SoundResultGame soundResultGame) : base(stateMachine)
     {
         _router = router;
         _globalEvent = globalEvent;
         _menuLayout = menuLayout;
         _panelLayout = panelLayout;
         _mouse = mouse;
+        _soundResultGame = soundResultGame;
     }
 
     public override void Exit()
@@ -27,6 +29,7 @@ public class LevelLoose : LevelState
         _globalEvent.LooseGame();
         _router.OpenLooseMenu();
         _mouse.SetVisible(true);
+        _soundResultGame.PlayLooseGame();
     }
 
     public override void Update()

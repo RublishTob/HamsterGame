@@ -6,13 +6,15 @@ public class LevelWin : LevelState
     private GlobalEventState _globalEvent;
     private MenuLayout _menuLayout;
     private PanelLayout _panelLayout;
-    public LevelWin(LevelStateMachine stateMachine, MouseVisible mouse, UIRouter router, GlobalEventState globalEvent, MenuLayout menuLayout, PanelLayout panelLayout) : base(stateMachine)
+    private SoundResultGame _soundResultGame;
+    public LevelWin(LevelStateMachine stateMachine, MouseVisible mouse, UIRouter router, GlobalEventState globalEvent, MenuLayout menuLayout, PanelLayout panelLayout, SoundResultGame soundResultGame) : base(stateMachine)
     {
         _mouse = mouse;
         _router = router;
         _globalEvent = globalEvent;
         _menuLayout = menuLayout;
         _panelLayout = panelLayout;
+        _soundResultGame = soundResultGame;
     }
 
 
@@ -28,6 +30,7 @@ public class LevelWin : LevelState
         _globalEvent.WinGame();
         _router.OpenWinMenu();
         _mouse.SetVisible(true);
+        _soundResultGame.PlayWinGame();
     }
 
     public override void Update()

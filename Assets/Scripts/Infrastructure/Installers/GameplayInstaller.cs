@@ -11,13 +11,12 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private LevelStateMachine _levelStateMachine;
     [SerializeField] private GlobalEventState _stateMachineView;
     [SerializeField] private SoundGamePlay _soundGameplay;
+    [SerializeField] private SoundResultGame _soundResultGame;
     [SerializeField] private LevelProgressWatcher _levelProgressWatcher;
-    [SerializeField] private PlayerViewDetect _player;
     public override void InstallBindings()
     {
         Container.Bind<GlobalEventState>().FromInstance(_stateMachineView).AsSingle();
         Container.BindInterfacesAndSelfTo<WalletRepository>().AsSingle();
-        Container.Bind<PlayerViewDetect>().FromInstance(_player).AsSingle();
         Container.BindInterfacesAndSelfTo<PlayerPresenter>().AsSingle();
         Container.Bind<InputPlayer>().AsSingle();
         Container.Bind<SoundGamePlay>().FromInstance(_soundGameplay).AsSingle();
@@ -25,6 +24,9 @@ public class GameplayInstaller : MonoInstaller
         Container.Bind<Counter>().FromInstance(_counter).AsSingle();
         Container.Bind<TutorialText>().FromInstance(_tutorialText).AsSingle();
         Container.Bind<MenuLayout>().FromInstance(_menuLayout).AsSingle();
+
+        Container.Bind<SoundResultGame>().FromInstance(_soundResultGame).AsSingle();
+
         Container.Bind<PanelLayout>().FromInstance(_panelLayout).AsSingle();
         Container.Bind<RewardFactory>().AsSingle();
 
