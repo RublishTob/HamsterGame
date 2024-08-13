@@ -19,7 +19,8 @@ public class DataLocalProvider : IDataProvider
 
     public IPersistentData PersistentData { get => _persistentData; }
     private string SavePath => Application.persistentDataPath;
-    private string FullPath => Path.Combine(SavePath, $"{fileName}{SAVE_FILE_EXTENTION}");
+    private string SavePathStreamPath=> Application.streamingAssetsPath;
+    private string FullPath => Path.Combine(SavePathStreamPath, $"{fileName}{SAVE_FILE_EXTENTION}");
     private bool IsDataAlreadyExist() => File.Exists(FullPath);
 
     public void SaveDataPlayer(PlayerSave data) 

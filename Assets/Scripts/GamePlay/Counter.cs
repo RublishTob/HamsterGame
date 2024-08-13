@@ -18,18 +18,17 @@ public class Counter : MonoBehaviour
     private StateLevelData _levelData;
     private SaveLoadSystem _saveSystem;
     private DisposeManager _disposeManager;
-    private LevelProgressWatcher _watcher;
 
     private bool IsCounterRun{  get { return _isCounterRun; } }
     public float Seconds { get { return _seconds; } }
 
     [Inject]
-    public void Construct(StateLevelData levelData, SaveLoadSystem saveSystem, DisposeManager disposeManager, LevelProgressWatcher watcher)
+    public void Construct(StateLevelData levelData, SaveLoadSystem saveSystem, DisposeManager disposeManager)
     {
         _levelData = levelData;
         _seconds = _levelData.Count;
         _saveSystem = saveSystem;
-        _watcher = watcher;
+        _saveSystem = saveSystem;
         _saveSystem.SaveData += SaveCount;
         _disposeManager = disposeManager;
         _isCounterRun = _levelData.IsTimerRun;

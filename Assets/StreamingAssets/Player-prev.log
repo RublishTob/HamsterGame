@@ -1,0 +1,2098 @@
+Mono path[0] = 'F:/Hamster/Hamster G_Data/Managed'
+Mono config path = 'F:/Hamster/MonoBleedingEdge/etc'
+[Physics::Module] Initialized MultithreadedJobDispatcher with 5 workers.
+Initialize engine version: 2022.3.26f1 (ec6cd8118806)
+[Subsystems] Discovering subsystems at path F:/Hamster/Hamster G_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1; jobified=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     4037 MB
+    Driver:   31.0.15.3623
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  2.294 seconds
+- Finished resetting the current domain, in  0.002 seconds
+<RI> Initializing input.
+New input system (experimental) initialized
+Using Windows.Gaming.Input
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.098100 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 10.349400 ms
+Unloading 320 unused Assets to reduce memory usage. Loaded Objects now: 3444.
+Total: 11.868200 ms (FindLiveObjects: 0.186000 ms CreateObjectMapping: 0.115300 ms MarkObjects: 11.444400 ms  DeleteObjects: 0.122300 ms)
+
+Color primaries 0 is unknown or unsupported by WindowsMediaFoundation. Falling back to default may result in color shift. F:/Hamster/Hamster G_Data/sharedassets1.resource
+3
+0
+0
+0
+3
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.288600 ms
+START LEVEL STATE
+Not allowed to access vertices on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Branch_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Bridge' (isReadable is false; Read/Write must be enabled in import settings)
+Собрано 0 монет
+Not allowed to access vertices on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_02' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_03' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access vertices on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access normals on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access colors on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access tangents on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv2 on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv3 on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access uv4 on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+Not allowed to access triangles/indices on mesh 'Rock_01' (isReadable is false; Read/Write must be enabled in import settings)
+False
+Unloading 364 unused Assets to reduce memory usage. Loaded Objects now: 7622.
+Total: 5.341000 ms (FindLiveObjects: 0.640100 ms CreateObjectMapping: 0.390300 ms MarkObjects: 4.063900 ms  DeleteObjects: 0.246400 ms)
+
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+START LEVEL STATE
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+PAUSE ALL MTHFCK
+PAUSE LEVEL STATE
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+False
+False
+NullReferenceException: Object reference not set to an instance of an object
+  at SavePanelView.OnDestroy () [0x00015] in <8c80d30d1aca4f3bb83f42b5d3483b0f>:0 
+
+UnloadTime: 11.359800 ms
+Unloading 1551 unused Assets to reduce memory usage. Loaded Objects now: 3482.
+Total: 4.002400 ms (FindLiveObjects: 0.290600 ms CreateObjectMapping: 0.207200 ms MarkObjects: 1.677800 ms  DeleteObjects: 1.826600 ms)
+
+Color primaries 0 is unknown or unsupported by WindowsMediaFoundation. Falling back to default may result in color shift. F:/Hamster/Hamster G_Data/sharedassets1.resource
+Memory Statistics:
+[ALLOC_TEMP_TLS] TLS Allocator
+  StackAllocators : 
+    [ALLOC_TEMP_MAIN]
+      Peak usage frame count: [1.0 KB-2.0 KB]: 672 frames, [2.0 KB-4.0 KB]: 2044 frames, [8.0 KB-16.0 KB]: 1 frames, [32.0 KB-64.0 KB]: 1 frames, [64.0 KB-128.0 KB]: 2 frames, [256.0 KB-0.5 MB]: 3 frames, [0.5 MB-1.0 MB]: 1 frames, [2.0 MB-4.0 MB]: 1 frames
+      Initial Block Size 4.0 MB
+      Current Block Size 4.0 MB
+      Peak Allocated Bytes 2.2 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.AsyncRead]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 256 B
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.PreloadManager]
+      Initial Block Size 256.0 KB
+      Current Block Size 0.5 MB
+      Peak Allocated Bytes 453.0 KB
+      Overflow Count 31
+    [ALLOC_TEMP_Background Job.Worker 8]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 9]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 14.7 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 10]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 14]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 6]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 4]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 46.1 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 3]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 30.3 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 12]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_EnlightenWorker] x 6
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 15]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 1]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 0.5 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 2]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 7]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_UnityGfxDeviceWorker]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 16.5 KB
+      Overflow Count 0
+    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 5
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 138 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 5]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 13]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 29.3 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 368.0 KB
+      Peak Allocated Bytes 311.5 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 3]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 11]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_HIDInput]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 10.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 4]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_BatchDeleteObjects]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+[ALLOC_DEFAULT] Dual Thread Allocator
+  Peak main deferred allocation count 309
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.8 MB
+    [ALLOC_DEFAULT_MAIN]
+      Peak usage frame count: [32.0 MB-64.0 MB]: 2725 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 2
+      Peak Allocated memory 45.9 MB
+      Peak Large allocation bytes 24.2 MB
+    [ALLOC_DEFAULT_THREAD]
+      Peak usage frame count: [16.0 MB-32.0 MB]: 2656 frames, [64.0 MB-128.0 MB]: 69 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 82.1 MB
+      Peak Large allocation bytes 72.0 MB
+[ALLOC_TEMP_JOB_1_FRAME]
+  Initial Block Size 2.0 MB
+  Used Block Count 0
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_2_FRAMES]
+  Initial Block Size 2.0 MB
+  Used Block Count 0
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_ASYNC (Background)]
+  Initial Block Size 1.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_GFX] Dual Thread Allocator
+  Peak main deferred allocation count 62
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.8 MB
+    [ALLOC_GFX_MAIN]
+      Peak usage frame count: [64.0 KB-128.0 KB]: 896 frames, [128.0 KB-256.0 KB]: 162 frames, [256.0 KB-0.5 MB]: 1 frames, [4.0 MB-8.0 MB]: 1666 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 6.4 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_GFX_THREAD]
+      Peak usage frame count: [1.0 MB-2.0 MB]: 846 frames, [2.0 MB-4.0 MB]: 99 frames, [4.0 MB-8.0 MB]: 6 frames, [8.0 MB-16.0 MB]: 1774 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 13.8 MB
+      Peak Large allocation bytes 0 B
+[ALLOC_CACHEOBJECTS] Dual Thread Allocator
+  Peak main deferred allocation count 377
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.8 MB
+    [ALLOC_CACHEOBJECTS_MAIN]
+      Peak usage frame count: [8.0 MB-16.0 MB]: 2724 frames, [16.0 MB-32.0 MB]: 1 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 4
+      Peak Allocated memory 17.1 MB
+      Peak Large allocation bytes 5.9 MB
+    [ALLOC_CACHEOBJECTS_THREAD]
+      Peak usage frame count: [256.0 KB-0.5 MB]: 870 frames, [0.5 MB-1.0 MB]: 27 frames, [8.0 MB-16.0 MB]: 1667 frames, [16.0 MB-32.0 MB]: 161 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 5
+      Peak Allocated memory 23.1 MB
+      Peak Large allocation bytes 5.5 MB
+[ALLOC_TYPETREE] Dual Thread Allocator
+  Peak main deferred allocation count 0
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.8 MB
+    [ALLOC_TYPETREE_MAIN]
+      Peak usage frame count: [16.0 KB-32.0 KB]: 2725 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 22.5 KB
+      Peak Large allocation bytes 0 B
+    [ALLOC_TYPETREE_THREAD]
+      Peak usage frame count: [4.0 KB-8.0 KB]: 2725 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 6.9 KB
+      Peak Large allocation bytes 0 B
